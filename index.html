@@ -50,10 +50,6 @@ html{scroll-behavior:smooth}
 .headline-shadow{text-shadow:0 1px 0 rgba(255,255,255,.85)}
 .btn-tap{transform:translateY(0);transition:transform .06s ease}.btn-tap:active{transform:translateY(1px)}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-
-/* Mobile drawer: robust CSS (no Tailwind utility dependency) */
-#mobilePanel{transform:translateX(100%);transition:transform .25s ease;will-change:transform}
-#mobilePanel.open{transform:translateX(0)}
 </style>
 <script defer src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
 <script defer src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
@@ -90,20 +86,12 @@ html{scroll-behavior:smooth}
       <button class="ml-2 px-4 py-2 bg-gradient-to-br from-pink-500 to-rose-400 text-white rounded-full shadow-sm hover:from-pink-600 hover:to-rose-500 focus-ring btn-tap">Visit Store</button>
     </nav>
 
-    <!-- Mobile hamburger -->
-    <button id="menuToggle" class="md:hidden p-2 rounded-md bg-white paper focus-ring"
-            aria-label="Open menu" aria-controls="mobileNav" aria-expanded="false">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path d="M4 6h16M4 12h16M4 18h16" stroke="#ec4899" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-    </button>
-  </div>
-</header>
+   
 
 <!-- Mobile drawer -->
-<div id="mobileNav" class="md:hidden fixed inset-0 z-40 hidden" role="dialog" aria-modal="true" aria-hidden="true">
+<div id="mobileNav" class="md:hidden fixed inset-0 z-40 hidden" role="dialog" aria-modal="true">
   <div id="mobileBackdrop" class="absolute inset-0 bg-black/30"></div>
-  <div id="mobilePanel" class="ml-auto h-full w-72 max-w-[85vw] bg-white paper shadow-xl">
+  <div id="mobilePanel" class="ml-auto h-full w-72 max-w-[85vw] bg-white paper shadow-xl translate-x-full transition-transform duration-200">
     <div class="flex items-center justify-between p-4 border-b">
       <span class="font-semibold">Menu</span>
       <button id="menuClose" class="p-2 rounded-md focus-ring" aria-label="Close menu">
@@ -185,7 +173,7 @@ html{scroll-behavior:smooth}
     </div>
   </section>
 
-  <!-- Shop (cards unchanged for brevity) -->
+  <!-- Shop -->
   <section id="shop" class="mt-8">
     <div class="flex items-center justify-between">
       <h3 class="text-2xl font-semibold">Featured Crafts</h3>
@@ -193,9 +181,126 @@ html{scroll-behavior:smooth}
     </div>
 
     <div id="productGrid" class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6" aria-live="polite">
-      <!-- ... keep your existing six cards exactly as in your last message ... -->
-      <!-- For space, I’m omitting the repeated card HTML here.
-           You can keep the same cards from your last paste; no change needed. -->
+      <!-- Product cards -->
+      <article class="paper rounded-2xl overflow-hidden hover:shadow-lg transition craft-card" data-category="pottery" data-product="Glazed Ceramic Mug" data-price="₹1,250">
+        <div class="relative"><img loading="lazy" src="./IMAGES/about3.jpeg" alt="Glazed Ceramic Mug" class="w-full h-48 sm:h-52 object-cover"/><span class="badge absolute left-3 top-3">Pottery</span></div>
+        <div class="p-4">
+          <h4 class="font-medium">Glazed Ceramic Mug</h4>
+          <p class="text-sm muted mt-1">Wheel-thrown, dishwasher safe</p>
+          <div class="flex items-center gap-2 mt-3">
+            <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
+            <input aria-label="quantity" type="number" value="1" min="1" class="w-12 text-center border rounded-md py-1"/>
+            <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
+            <select class="ml-auto border rounded-md px-2 py-1 text-sm" aria-label="Select variant">
+              <option>Matte White</option><option>Ocean Blue</option><option>Speckled</option>
+            </select>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <div class="text-lg font-semibold">₹1,250</div>
+            <button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring btn-tap">WhatsApp</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="paper rounded-2xl overflow-hidden hover:shadow-lg transition craft-card" data-category="knit" data-product="Hand Knit Scarf" data-price="₹950">
+        <div class="relative"><img loading="lazy" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1200&auto=format&fit=crop" alt="Hand Knit Scarf" class="w-full h-48 sm:h-52 object-cover"/><span class="badge absolute left-3 top-3">Knit</span></div>
+        <div class="p-4">
+          <h4 class="font-medium">Hand Knit Scarf</h4>
+          <p class="text-sm muted mt-1">Merino wool, limited colors</p>
+          <div class="flex items-center gap-2 mt-3">
+            <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
+            <input aria-label="quantity" type="number" value="1" min="1" class="w-12 text-center border rounded-md py-1"/>
+            <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
+            <select class="ml-auto border rounded-md px-2 py-1 text-sm" aria-label="Select variant">
+              <option>Rose</option><option>Blush</option><option>Ivory</option>
+            </select>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <div class="text-lg font-semibold">₹950</div>
+            <button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring btn-tap">WhatsApp</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="paper rounded-2xl overflow-hidden hover:shadow-lg transition craft-card" data-category="candle" data-product="Scented Soy Candle" data-price="₹650">
+        <div class="relative"><img loading="lazy" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1200&auto=format&fit=crop" alt="Scented Soy Candle" class="w-full h-48 sm:h-52 object-cover"/><span class="badge absolute left-3 top-3">Candle</span></div>
+        <div class="p-4">
+          <h4 class="font-medium">Scented Soy Candle</h4>
+          <p class="text-sm muted mt-1">Cedar + Orange</p>
+          <div class="flex items-center gap-2 mt-3">
+            <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
+            <input aria-label="quantity" type="number" value="1" min="1" class="w-12 text-center border rounded-md py-1"/>
+            <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
+            <select class="ml-auto border rounded-md px-2 py-1 text-sm" aria-label="Select variant">
+              <option>Medium</option><option>Large</option>
+            </select>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <div class="text-lg font-semibold">₹650</div>
+            <button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring btn-tap">WhatsApp</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="paper rounded-2xl overflow-hidden hover:shadow-lg transition craft-card" data-category="weave" data-product="Woven Wall Hanging" data-price="₹1,600">
+        <div class="relative"><img loading="lazy" src="https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1200&auto=format&fit=crop" alt="Woven Wall Hanging" class="w-full h-48 sm:h-52 object-cover"/><span class="badge absolute left-3 top-3">Weaving</span></div>
+        <div class="p-4">
+          <h4 class="font-medium">Woven Wall Hanging</h4>
+          <p class="text-sm muted mt-1">Organic cotton + jute</p>
+          <div class="flex items-center gap-2 mt-3">
+            <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
+            <input aria-label="quantity" type="number" value="1" min="1" class="w-12 text-center border rounded-md py-1"/>
+            <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
+            <select class="ml-auto border rounded-md px-2 py-1 text-sm" aria-label="Select variant">
+              <option>Natural</option><option>Rose Fade</option>
+            </select>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <div class="text-lg font-semibold">₹1,600</div>
+            <button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring btn-tap">WhatsApp</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="paper rounded-2xl overflow-hidden hover:shadow-lg transition craft-card" data-category="gift" data-product="Gift Set — Candle + Mug" data-price="₹1,950">
+        <div class="relative"><img loading="lazy" src="https://images.unsplash.com/photo-1596464716121-d8f3dcf6c6c9?q=80&w=1200&auto=format&fit=crop" alt="Gift Set — Candle and Mug" class="w-full h-48 sm:h-52 object-cover"/><span class="badge absolute left-3 top-3">Gift</span></div>
+        <div class="p-4">
+          <h4 class="font-medium">Gift Set — Candle + Mug</h4>
+          <p class="text-sm muted mt-1">Best-seller combo</p>
+          <div class="flex items-center gap-2 mt-3">
+            <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
+            <input aria-label="quantity" type="number" value="1" min="1" class="w-12 text-center border rounded-md py-1"/>
+            <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
+            <select class="ml-auto border rounded-md px-2 py-1 text-sm" aria-label="Select variant">
+              <option>Lavender</option><option>Rose</option><option>Citrus</option>
+            </select>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <div class="text-lg font-semibold">₹1,950</div>
+            <button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring btn-tap">WhatsApp</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="paper rounded-2xl overflow-hidden hover:shadow-lg transition craft-card" data-category="pottery" data-product="Serving Bowl" data-price="₹1,450">
+        <div class="relative"><img loading="lazy" src="https://images.unsplash.com/photo-1523419409543-300dbf1568fa?q=80&w=1200&auto=format&fit=crop" alt="Serving Bowl" class="w-full h-48 sm:h-52 object-cover"/><span class="badge absolute left-3 top-3">Pottery</span></div>
+        <div class="p-4">
+          <h4 class="font-medium">Serving Bowl</h4>
+          <p class="text-sm muted mt-1">Glazed stoneware</p>
+          <div class="flex items-center gap-2 mt-3">
+            <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
+            <input aria-label="quantity" type="number" value="1" min="1" class="w-12 text-center border rounded-md py-1"/>
+            <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
+            <select class="ml-auto border rounded-md px-2 py-1 text-sm" aria-label="Select variant">
+              <option>12"</option><option>14"</option>
+            </select>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <div class="text-lg font-semibold">₹1,450</div>
+            <button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring btn-tap">WhatsApp</button>
+          </div>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -278,18 +383,16 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Mobile menu: robust open/close
+  // Mobile menu toggle + focus trap
   const menuToggle = document.getElementById('menuToggle');
   const mobileNav = document.getElementById('mobileNav');
   const mobilePanel = document.getElementById('mobilePanel');
   const mobileBackdrop = document.getElementById('mobileBackdrop');
   const menuClose = document.getElementById('menuClose');
 
-  let isOpen = false;
   let lastFocus = null;
-
   function trapFocus(e) {
-    if (!isOpen) return;
+    if (!mobileNav || mobileNav.classList.contains('hidden')) return;
     const focusables = mobileNav.querySelectorAll('a, button, select');
     if (!focusables.length) return;
     const first = focusables[0], last = focusables[focusables.length - 1];
@@ -300,48 +403,39 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   function openMenu() {
-    if (isOpen) return;
+    if (!mobileNav) return;
     lastFocus = document.activeElement;
     mobileNav.classList.remove('hidden');
-    mobileNav.setAttribute('aria-hidden','false');
-    // ensure frame before transition
-    requestAnimationFrame(() => mobilePanel.classList.add('open'));
+    requestAnimationFrame(() => mobilePanel.classList.remove('translate-x-full'));
     document.body.classList.add('overflow-hidden');
     menuToggle.setAttribute('aria-expanded', 'true');
-    isOpen = true;
     const firstLink = mobileNav.querySelector('a,button');
     firstLink && firstLink.focus();
     document.addEventListener('keydown', trapFocus);
   }
 
   function closeMenu() {
-    if (!isOpen) return;
-    mobilePanel.classList.remove('open');
+    if (!mobileNav) return;
+    mobilePanel.classList.add('translate-x-full');
     document.body.classList.remove('overflow-hidden');
     menuToggle.setAttribute('aria-expanded', 'false');
-    isOpen = false;
-    // wait for CSS transition to end
-    setTimeout(() => {
-      mobileNav.classList.add('hidden');
-      mobileNav.setAttribute('aria-hidden','true');
-    }, 260);
+    setTimeout(() => mobileNav.classList.add('hidden'), 200);
     document.removeEventListener('keydown', trapFocus);
     (lastFocus || menuToggle).focus();
   }
 
-  menuToggle?.addEventListener('click', () => (isOpen ? closeMenu() : openMenu()));
+  menuToggle?.addEventListener('click', openMenu);
   menuClose?.addEventListener('click', closeMenu);
   mobileBackdrop?.addEventListener('click', closeMenu);
   mobileNav?.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
-  window.addEventListener('resize', closeMenu);
-  window.addEventListener('orientationchange', closeMenu);
+  mobileNav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setTimeout(closeMenu, 50)));
 
   // Filters + Search + Sort
   const filterButtons = document.querySelectorAll('.filter-btn');
   const searchBox = document.getElementById('searchBox');
   const sortSelect = document.getElementById('sortSelect');
   const grid = document.getElementById('productGrid');
-  const cards = grid ? [...grid.querySelectorAll('.craft-card')] : [];
+  const cards = [...grid.querySelectorAll('.craft-card')];
 
   // Normalize numeric price for sorting
   cards.forEach(c => {
@@ -362,7 +456,7 @@ window.addEventListener('DOMContentLoaded', () => {
   setActiveFilterUI();
 
   function applyFilters() {
-    const q = (searchBox?.value || '').trim().toLowerCase();
+    const q = (searchBox.value || '').trim().toLowerCase();
     cards.forEach(c => {
       const cat = c.dataset.category;
       const name = (c.dataset.product || '').toLowerCase();
@@ -372,7 +466,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   function sortCards() {
-    const value = sortSelect?.value || 'featured';
+    const value = sortSelect.value;
     const visibleCards = cards.filter(c => c.style.display !== 'none');
     const compare = {
       'price-asc': (a,b) => (+a.dataset.priceNum) - (+b.dataset.priceNum),
@@ -383,7 +477,9 @@ window.addEventListener('DOMContentLoaded', () => {
     visibleCards.sort(compare).forEach(c => grid.appendChild(c));
   }
 
-  const debounced = (fn, d=180) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), d); }; };
+  const debounced = (fn, d=180) => {
+    let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), d); };
+  };
 
   filterButtons.forEach(b => b.addEventListener('click', () => {
     activeFilter = b.dataset.filter;
@@ -393,9 +489,14 @@ window.addEventListener('DOMContentLoaded', () => {
     sortCards();
   }));
 
-  searchBox?.addEventListener('input', debounced(() => { applyFilters(); sortCards(); }, 160));
-  sortSelect?.addEventListener('change', () => sortCards());
+  searchBox.addEventListener('input', debounced(() => {
+    applyFilters();
+    sortCards();
+  }, 160));
 
+  sortSelect.addEventListener('change', () => sortCards());
+
+  // Initialize
   applyFilters();
   sortCards();
 
@@ -409,7 +510,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
     dec?.addEventListener('click', () => { qty.value = Math.max(1, parseInt(qty.value||'1',10) - 1); qty.dispatchEvent(new Event('change')); });
     inc?.addEventListener('click', () => { qty.value = Math.max(1, parseInt(qty.value||'1',10) + 1); qty.dispatchEvent(new Event('change')); });
-    qty?.addEventListener('change', () => { const n = Math.max(1, parseInt(qty.value||'1',10)); qty.value = String(n); });
+    qty?.addEventListener('change', () => {
+      const n = Math.max(1, parseInt(qty.value||'1',10));
+      qty.value = String(n);
+    });
 
     btn?.addEventListener('click', e => {
       e.preventDefault();
@@ -424,7 +528,7 @@ window.addEventListener('DOMContentLoaded', () => {
   cards.forEach(initCard);
 
   // Floating WA
-  document.getElementById('waFab')?.addEventListener('click', e => {
+  document.getElementById('waFab').addEventListener('click', e => {
     e.preventDefault();
     window.open(waLink("Hi Afreen! I'd like to know more about your handmade products and workshops."), '_blank');
   });
