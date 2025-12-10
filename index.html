@@ -86,7 +86,15 @@ html{scroll-behavior:smooth}
       <button class="ml-2 px-4 py-2 bg-gradient-to-br from-pink-500 to-rose-400 text-white rounded-full shadow-sm hover:from-pink-600 hover:to-rose-500 focus-ring btn-tap">Visit Store</button>
     </nav>
 
-   
+    <!-- Mobile hamburger -->
+    <button id="menuToggle" class="md:hidden p-2 rounded-md bg-white paper focus-ring"
+            aria-label="Open menu" aria-controls="mobileNav" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4 6h16M4 12h16M4 18h16" stroke="#ec4899" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+</header>
 
 <!-- Mobile drawer -->
 <div id="mobileNav" class="md:hidden fixed inset-0 z-40 hidden" role="dialog" aria-modal="true">
