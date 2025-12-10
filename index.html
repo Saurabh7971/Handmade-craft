@@ -50,6 +50,9 @@ html{scroll-behavior:smooth}
 .headline-shadow{text-shadow:0 1px 0 rgba(255,255,255,.85)}
 .btn-tap{transform:translateY(0);transition:transform .06s ease}.btn-tap:active{transform:translateY(1px)}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+/* Mobile nav: always visible and scrollable */
+.nav-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory}
+.nav-scroll a, .nav-scroll button{scroll-snap-align:start}
 </style>
 <script defer src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
 <script defer src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
@@ -65,53 +68,34 @@ html{scroll-behavior:smooth}
   <div class="bg-overlay"></div>
 </div>
 
-<!-- Header -->
+<!-- Header (no hamburger; nav always visible) -->
 <header class="sticky top-0 z-30 bg-transparent">
-  <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
-    <a class="flex items-center gap-3" href="#" aria-label="Go to homepage">
-      <div class="w-12 h-12 rounded-full bg-gradient-to-br from-pink-100 to-white flex items-center justify-center paper">
-        <span class="hand text-2xl text-pink-600">A</span>
-      </div>
-      <div>
-        <h1 class="text-lg font-semibold">Afreen Handmade Goods</h1>
-        <p class="text-xs muted">Made by Afreen</p>
-      </div>
-    </a>
-
-    <!-- Desktop nav -->
-    <nav class="hidden md:flex items-center gap-6 text-sm" aria-label="Primary">
-      <a href="#shop" class="text-slate-700 hover:text-pink-600">Shop</a>
-      <a href="#about" class="text-slate-700 hover:text-pink-600">About</a>
-      <a href="#contact" class="text-slate-700 hover:text-pink-600">Workshops</a>
-      <button class="ml-2 px-4 py-2 bg-gradient-to-br from-pink-500 to-rose-400 text-white rounded-full shadow-sm hover:from-pink-600 hover:to-rose-500 focus-ring btn-tap">Visit Store</button>
-    </nav>
-
-   
-<!-- Mobile drawer -->
-<div id="mobileNav" class="md:hidden fixed inset-0 z-40 hidden" role="dialog" aria-modal="true">
-  <div id="mobileBackdrop" class="absolute inset-0 bg-black/30"></div>
-  <div id="mobilePanel" class="ml-auto h-full w-72 max-w-[85vw] bg-white paper shadow-xl translate-x-full transition-transform duration-200">
-    <div class="flex items-center justify-between p-4 border-b">
-      <span class="font-semibold">Menu</span>
-      <button id="menuClose" class="p-2 rounded-md focus-ring" aria-label="Close menu">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M6 6l12 12M18 6l-12 12" stroke="#0f172a" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </button>
+  <div class="max-w-6xl mx-auto px-6 py-5">
+    <div class="flex items-center justify-between">
+      <a class="flex items-center gap-3" href="#" aria-label="Go to homepage">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-pink-100 to-white flex items-center justify-center paper">
+          <span class="hand text-2xl text-pink-600">A</span>
+        </div>
+        <div>
+          <h1 class="text-lg font-semibold">Afreen Handmade Goods</h1>
+          <p class="text-xs muted">Made by Afreen</p>
+        </div>
+      </a>
+      <a href="#shop" class="hidden sm:inline-flex ml-4 px-4 py-2 bg-gradient-to-br from-pink-500 to-rose-400 text-white rounded-full shadow-sm hover:from-pink-600 hover:to-rose-500 focus-ring btn-tap">Visit Store</a>
     </div>
-    <nav class="p-4 flex flex-col gap-3" aria-label="Mobile">
-      <a class="py-2 border-b" href="#shop">Shop</a>
-      <a class="py-2 border-b" href="#about">About</a>
-      <a class="py-2 border-b" href="#contact">Workshops</a>
-      <a class="mt-3 inline-flex items-center justify-center px-4 py-2 bg-gradient-to-br from-pink-500 to-rose-400 text-white rounded-lg focus-ring"
-         href="#shop">Visit Store</a>
+
+    <!-- Always-visible nav; horizontal scroll on small screens -->
+    <nav class="mt-4 nav-scroll flex items-center gap-6 text-sm pb-1" aria-label="Primary">
+      <a href="#shop" class="text-slate-700 hover:text-pink-600 whitespace-nowrap">Shop</a>
+      <a href="#about" class="text-slate-700 hover:text-pink-600 whitespace-nowrap">About</a>
+      <a href="#contact" class="text-slate-700 hover:text-pink-600 whitespace-nowrap">Workshops</a>
+      <a href="#contact" class="sm:hidden inline-flex items-center px-3 py-1.5 bg-gradient-to-br from-pink-500 to-rose-400 text-white rounded-full focus-ring btn-tap whitespace-nowrap">Visit Store</a>
     </nav>
   </div>
-</div>
+</header>
 
-<!-- Main -->
 <main class="max-w-6xl mx-auto px-6 py-12">
-  <!-- Hero -->
+  <!-- HERO -->
   <section class="grid lg:grid-cols-2 gap-8 items-center">
     <div class="hero-glass rounded-2xl p-5 sm:p-6">
       <h2 class="hand text-4xl sm:text-5xl text-pink-600 leading-tight accent-underline headline-shadow">Handmade goods crafted with care by Afreen</h2>
@@ -142,7 +126,7 @@ html{scroll-behavior:smooth}
     </div>
   </section>
 
-  <!-- Filters -->
+  <!-- FILTERS -->
   <section class="mt-12 paper rounded-2xl p-4">
     <div class="flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
       <div class="flex gap-2 flex-wrap" role="tablist" aria-label="Filter products">
@@ -172,7 +156,7 @@ html{scroll-behavior:smooth}
     </div>
   </section>
 
-  <!-- Shop -->
+  <!-- SHOP -->
   <section id="shop" class="mt-8">
     <div class="flex items-center justify-between">
       <h3 class="text-2xl font-semibold">Featured Crafts</h3>
@@ -180,7 +164,7 @@ html{scroll-behavior:smooth}
     </div>
 
     <div id="productGrid" class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6" aria-live="polite">
-      <!-- Product cards -->
+      <!-- Cards -->
       <article class="paper rounded-2xl overflow-hidden hover:shadow-lg transition craft-card" data-category="pottery" data-product="Glazed Ceramic Mug" data-price="₹1,250">
         <div class="relative"><img loading="lazy" src="./IMAGES/about3.jpeg" alt="Glazed Ceramic Mug" class="w-full h-48 sm:h-52 object-cover"/><span class="badge absolute left-3 top-3">Pottery</span></div>
         <div class="p-4">
@@ -303,7 +287,7 @@ html{scroll-behavior:smooth}
     </div>
   </section>
 
-  <!-- About -->
+  <!-- ABOUT -->
   <section id="about" class="mt-12 grid lg:grid-cols-2 gap-8 items-center">
     <div class="paper rounded-2xl p-6">
       <h3 class="text-2xl font-semibold">About Afreen’s studio</h3>
@@ -314,7 +298,7 @@ html{scroll-behavior:smooth}
     </div>
   </section>
 
-  <!-- Contact -->
+  <!-- CONTACT -->
   <section id="contact" class="mt-12 paper rounded-2xl p-6">
     <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
       <div>
@@ -348,17 +332,16 @@ html{scroll-behavior:smooth}
   </footer>
 </main>
 
-<!-- Floating WhatsApp -->
 <a id="waFab" class="floating-wa focus-ring btn-tap" href="#" aria-label="Chat on WhatsApp">💬</a>
 
-<!-- Scripts -->
 <script>
+// WhatsApp helpers
 const WHATSAPP_NUMBER = '917972197711';
 const waLink = (text) => {
   const t = encodeURIComponent(text);
   const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
   return isMobile
-    ? `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${t}` 
+    ? `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${t}`
     : `https://wa.me/${WHATSAPP_NUMBER}?text=${t}`;
 };
 
@@ -382,53 +365,6 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Mobile menu toggle + focus trap
-  const menuToggle = document.getElementById('menuToggle');
-  const mobileNav = document.getElementById('mobileNav');
-  const mobilePanel = document.getElementById('mobilePanel');
-  const mobileBackdrop = document.getElementById('mobileBackdrop');
-  const menuClose = document.getElementById('menuClose');
-
-  let lastFocus = null;
-  function trapFocus(e) {
-    if (!mobileNav || mobileNav.classList.contains('hidden')) return;
-    const focusables = mobileNav.querySelectorAll('a, button, select');
-    if (!focusables.length) return;
-    const first = focusables[0], last = focusables[focusables.length - 1];
-    if (e.key === 'Tab') {
-      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-    }
-  }
-
-  function openMenu() {
-    if (!mobileNav) return;
-    lastFocus = document.activeElement;
-    mobileNav.classList.remove('hidden');
-    requestAnimationFrame(() => mobilePanel.classList.remove('translate-x-full'));
-    document.body.classList.add('overflow-hidden');
-    menuToggle.setAttribute('aria-expanded', 'true');
-    const firstLink = mobileNav.querySelector('a,button');
-    firstLink && firstLink.focus();
-    document.addEventListener('keydown', trapFocus);
-  }
-
-  function closeMenu() {
-    if (!mobileNav) return;
-    mobilePanel.classList.add('translate-x-full');
-    document.body.classList.remove('overflow-hidden');
-    menuToggle.setAttribute('aria-expanded', 'false');
-    setTimeout(() => mobileNav.classList.add('hidden'), 200);
-    document.removeEventListener('keydown', trapFocus);
-    (lastFocus || menuToggle).focus();
-  }
-
-  menuToggle?.addEventListener('click', openMenu);
-  menuClose?.addEventListener('click', closeMenu);
-  mobileBackdrop?.addEventListener('click', closeMenu);
-  mobileNav?.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
-  mobileNav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setTimeout(closeMenu, 50)));
-
   // Filters + Search + Sort
   const filterButtons = document.querySelectorAll('.filter-btn');
   const searchBox = document.getElementById('searchBox');
@@ -436,7 +372,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const grid = document.getElementById('productGrid');
   const cards = [...grid.querySelectorAll('.craft-card')];
 
-  // Normalize numeric price for sorting
+  // Prepare numeric price
   cards.forEach(c => {
     const priceStr = c.dataset.price || '';
     const num = parseInt(priceStr.replace(/[^\d]/g,''), 10) || 0;
@@ -476,9 +412,7 @@ window.addEventListener('DOMContentLoaded', () => {
     visibleCards.sort(compare).forEach(c => grid.appendChild(c));
   }
 
-  const debounced = (fn, d=180) => {
-    let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), d); };
-  };
+  const debounced = (fn, d=180) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), d); }; };
 
   filterButtons.forEach(b => b.addEventListener('click', () => {
     activeFilter = b.dataset.filter;
@@ -499,7 +433,7 @@ window.addEventListener('DOMContentLoaded', () => {
   applyFilters();
   sortCards();
 
-  // Card qty + WhatsApp
+  // Card WA actions
   function initCard(card) {
     const dec = card.querySelector('[data-qty-dec]');
     const inc = card.querySelector('[data-qty-inc]');
@@ -509,10 +443,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     dec?.addEventListener('click', () => { qty.value = Math.max(1, parseInt(qty.value||'1',10) - 1); qty.dispatchEvent(new Event('change')); });
     inc?.addEventListener('click', () => { qty.value = Math.max(1, parseInt(qty.value||'1',10) + 1); qty.dispatchEvent(new Event('change')); });
-    qty?.addEventListener('change', () => {
-      const n = Math.max(1, parseInt(qty.value||'1',10));
-      qty.value = String(n);
-    });
+    qty?.addEventListener('change', () => { const n = Math.max(1, parseInt(qty.value||'1',10)); qty.value = String(n); });
 
     btn?.addEventListener('click', e => {
       e.preventDefault();
@@ -526,7 +457,6 @@ window.addEventListener('DOMContentLoaded', () => {
   }
   cards.forEach(initCard);
 
-  // Floating WA
   document.getElementById('waFab').addEventListener('click', e => {
     e.preventDefault();
     window.open(waLink("Hi Afreen! I'd like to know more about your handmade products and workshops."), '_blank');
