@@ -1,10 +1,15 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Handmade & Crafts — Shop</title>
-<script src="https://cdn.tailwindcss.com"></script>
+<meta name="description" content="Handmade, small-batch goods — pottery, woven items, candles, and gifts. Book workshops and shop bestsellers."/>
+<meta name="theme-color" content="#ec4899"/>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 <style>
 :root{--bg-1:#ffe6f2;--bg-2:#fff0f6;--accent:#ec4899;--accent-2:#fb7185;--muted:#6b7280;--card:rgba(255,255,255,.9);--glass-border:rgba(236,72,153,.12)}
 html,body{height:100%}
@@ -32,9 +37,10 @@ linear-gradient(0deg,rgba(245,90,140,.10),rgba(245,90,140,.10));mix-blend-mode:s
 html{scroll-behavior:smooth}
 .hero-glass{background:rgba(255,255,255,.72);border:1px solid rgba(236,72,153,.14);box-shadow:0 10px 28px rgba(15,23,42,.06);backdrop-filter:blur(8px) saturate(120%)}
 .headline-shadow{text-shadow:0 1px 0 rgba(255,255,255,.85)}
+.btn-tap{transform:translateY(0);transition:transform .06s ease}.btn-tap:active{transform:translateY(1px)}
 </style>
-<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script defer src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script defer src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 </head>
 <body class="antialiased">
 
@@ -49,7 +55,7 @@ html{scroll-behavior:smooth}
 
 <header class="sticky top-0 z-30 bg-transparent">
   <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
-    <a class="flex items-center gap-3" href="#">
+    <a class="flex items-center gap-3" href="#" aria-label="Go to homepage">
       <div class="w-12 h-12 rounded-full bg-gradient-to-br from-pink-100 to-white flex items-center justify-center paper">
         <span class="hand text-2xl text-pink-600">H</span>
       </div>
@@ -58,11 +64,11 @@ html{scroll-behavior:smooth}
         <p class="text-xs muted">Made with love</p>
       </div>
     </a>
-    <nav class="hidden md:flex items-center gap-6 text-sm">
+    <nav class="hidden md:flex items-center gap-6 text-sm" aria-label="Primary">
       <a href="#shop" class="text-slate-700 hover:text-pink-600">Shop</a>
       <a href="#about" class="text-slate-700 hover:text-pink-600">About</a>
       <a href="#contact" class="text-slate-700 hover:text-pink-600">Workshops</a>
-      <button class="ml-2 px-4 py-2 bg-gradient-to-br from-pink-500 to-rose-400 text-white rounded-full shadow-sm hover:from-pink-600 hover:to-rose-500 focus-ring">Visit Store</button>
+      <button class="ml-2 px-4 py-2 bg-gradient-to-br from-pink-500 to-rose-400 text-white rounded-full shadow-sm hover:from-pink-600 hover:to-rose-500 focus-ring btn-tap">Visit Store</button>
     </nav>
     <button class="md:hidden p-2 rounded-md bg-white paper focus-ring" aria-label="open menu">☰</button>
   </div>
@@ -75,8 +81,8 @@ html{scroll-behavior:smooth}
       <h2 class="hand text-4xl sm:text-5xl text-pink-600 leading-tight accent-underline headline-shadow">Handmade goods crafted with care</h2>
       <p class="mt-4 muted max-w-xl">Unique, small-batch items made from natural materials — pottery, woven goods, candles, and gifts. Each piece tells a story.</p>
       <div class="mt-6 flex gap-3">
-        <a href="#shop" class="inline-flex items-center gap-2 px-5 py-3 bg-gradient-to-br from-pink-500 to-rose-400 text-white rounded-lg shadow hover:from-pink-600 hover:to-rose-500 focus-ring">Shop bestsellers</a>
-        <a href="#workshops" class="inline-flex items-center gap-2 px-5 py-3 border border-pink-100 rounded-lg text-pink-600 focus-ring">Book a workshop</a>
+        <a href="#shop" class="inline-flex items-center gap-2 px-5 py-3 bg-gradient-to-br from-pink-500 to-rose-400 text-white rounded-lg shadow hover:from-pink-600 hover:to-rose-500 focus-ring btn-tap">Shop bestsellers</a>
+        <a href="#workshops" class="inline-flex items-center gap-2 px-5 py-3 border border-pink-100 rounded-lg text-pink-600 focus-ring btn-tap">Book a workshop</a>
       </div>
       <ul class="mt-6 grid grid-cols-2 gap-3 text-sm muted">
         <li class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-rose-50 flex items-center justify-center text-rose-600">✓</span>Ethically sourced materials</li>
@@ -103,87 +109,159 @@ html{scroll-behavior:smooth}
   <!-- FILTERS -->
   <section class="mt-12 paper rounded-2xl p-4">
     <div class="flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
-      <div class="flex gap-2 flex-wrap">
-        <button class="pill px-3 py-1.5 rounded-full text-sm filter-btn focus-ring" data-filter="all">All</button>
-        <button class="pill px-3 py-1.5 rounded-full text-sm filter-btn focus-ring" data-filter="pottery">Pottery</button>
-        <button class="pill px-3 py-1.5 rounded-full text-sm filter-btn focus-ring" data-filter="knit">Knit</button>
-        <button class="pill px-3 py-1.5 rounded-full text-sm filter-btn focus-ring" data-filter="candle">Candles</button>
-        <button class="pill px-3 py-1.5 rounded-full text-sm filter-btn focus-ring" data-filter="weave">Weaving</button>
-        <button class="pill px-3 py-1.5 rounded-full text-sm filter-btn focus-ring" data-filter="gift">Gifts</button>
+      <div class="flex gap-2 flex-wrap" role="tablist" aria-label="Filter products">
+        <button class="pill px-3 py-1.5 rounded-full text-sm filter-btn focus-ring btn-tap" data-filter="all" aria-selected="true">All</button>
+        <button class="pill px-3 py-1.5 rounded-full text-sm filter-btn focus-ring btn-tap" data-filter="pottery">Pottery</button>
+        <button class="pill px-3 py-1.5 rounded-full text-sm filter-btn focus-ring btn-tap" data-filter="knit">Knit</button>
+        <button class="pill px-3 py-1.5 rounded-full text-sm filter-btn focus-ring btn-tap" data-filter="candle">Candles</button>
+        <button class="pill px-3 py-1.5 rounded-full text-sm filter-btn focus-ring btn-tap" data-filter="weave">Weaving</button>
+        <button class="pill px-3 py-1.5 rounded-full text-sm filter-btn focus-ring btn-tap" data-filter="gift">Gifts</button>
       </div>
-      <div class="relative w-full md:w-72">
-        <input id="searchBox" class="w-full border rounded-xl pl-10 pr-3 py-2 focus-ring" placeholder="Search products..."/>
-        <span class="absolute left-3 top-1/2 -translate-y-1/2 text-pink-500">🔎</span>
+      <div class="flex gap-3 w-full md:w-auto">
+        <div class="relative grow md:grow-0 w-full md:w-72">
+          <label for="searchBox" class="sr-only">Search products</label>
+          <input id="searchBox" class="w-full border rounded-xl pl-10 pr-3 py-2 focus-ring" placeholder="Search products..."/>
+          <span class="absolute left-3 top-1/2 -translate-y-1/2 text-pink-500">🔎</span>
+        </div>
+        <div>
+          <label for="sortSelect" class="sr-only">Sort products</label>
+          <select id="sortSelect" class="border rounded-xl px-3 py-2 focus-ring">
+            <option value="featured">Sort: Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="name-asc">Name: A–Z</option>
+          </select>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- SHOP (6 items for brevity) -->
+  <!-- SHOP -->
   <section id="shop" class="mt-8">
     <div class="flex items-center justify-between">
       <h3 class="text-2xl font-semibold">Featured Crafts</h3>
       <a href="#" class="text-sm text-pink-600 hover:underline">View all</a>
     </div>
 
-    <div id="productGrid" class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Card template repeated -->
+    <div id="productGrid" class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6" aria-live="polite">
+      <!-- Cards -->
       <article class="paper rounded-2xl overflow-hidden hover:shadow-lg transition craft-card" data-category="pottery" data-product="Glazed Ceramic Mug" data-price="₹1,250">
         <div class="relative"><img loading="lazy" src="./IMAGES/about3.jpeg" alt="Glazed Ceramic Mug" class="w-full h-48 sm:h-52 object-cover"/><span class="badge absolute left-3 top-3">Pottery</span></div>
-        <div class="p-4"><h4 class="font-medium">Glazed Ceramic Mug</h4><p class="text-sm muted mt-1">Wheel-thrown, dishwasher safe</p>
-          <div class="flex items-center gap-2 mt-3"><button class="qty-btn" data-qty-dec>−</button><input type="number" value="1" min="1" class="w-12 text-center border rounded-md py-1"/><button class="qty-btn" data-qty-inc>+</button>
-            <select class="ml-auto border rounded-md px-2 py-1 text-sm"><option>Matte White</option><option>Ocean Blue</option><option>Speckled</option></select>
+        <div class="p-4">
+          <h4 class="font-medium">Glazed Ceramic Mug</h4>
+          <p class="text-sm muted mt-1">Wheel-thrown, dishwasher safe</p>
+          <div class="flex items-center gap-2 mt-3">
+            <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
+            <input aria-label="quantity" type="number" value="1" min="1" class="w-12 text-center border rounded-md py-1"/>
+            <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
+            <select class="ml-auto border rounded-md px-2 py-1 text-sm" aria-label="Select variant">
+              <option>Matte White</option><option>Ocean Blue</option><option>Speckled</option>
+            </select>
           </div>
-          <div class="mt-4 flex items-center justify-between"><div class="text-lg font-semibold">₹1,250</div><button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring">WhatsApp</button></div>
+          <div class="mt-4 flex items-center justify-between">
+            <div class="text-lg font-semibold">₹1,250</div>
+            <button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring btn-tap">WhatsApp</button>
+          </div>
         </div>
       </article>
 
       <article class="paper rounded-2xl overflow-hidden hover:shadow-lg transition craft-card" data-category="knit" data-product="Hand Knit Scarf" data-price="₹950">
         <div class="relative"><img loading="lazy" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1200&auto=format&fit=crop" alt="Hand Knit Scarf" class="w-full h-48 sm:h-52 object-cover"/><span class="badge absolute left-3 top-3">Knit</span></div>
-        <div class="p-4"><h4 class="font-medium">Hand Knit Scarf</h4><p class="text-sm muted mt-1">Merino wool, limited colors</p>
-          <div class="flex items-center gap-2 mt-3"><button class="qty-btn" data-qty-dec>−</button><input type="number" value="1" min="1" class="w-12 text-center border rounded-md py-1"/><button class="qty-btn" data-qty-inc>+</button>
-            <select class="ml-auto border rounded-md px-2 py-1 text-sm"><option>Rose</option><option>Blush</option><option>Ivory</option></select>
+        <div class="p-4">
+          <h4 class="font-medium">Hand Knit Scarf</h4>
+          <p class="text-sm muted mt-1">Merino wool, limited colors</p>
+          <div class="flex items-center gap-2 mt-3">
+            <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
+            <input aria-label="quantity" type="number" value="1" min="1" class="w-12 text-center border rounded-md py-1"/>
+            <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
+            <select class="ml-auto border rounded-md px-2 py-1 text-sm" aria-label="Select variant">
+              <option>Rose</option><option>Blush</option><option>Ivory</option>
+            </select>
           </div>
-          <div class="mt-4 flex items-center justify-between"><div class="text-lg font-semibold">₹950</div><button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring">WhatsApp</button></div>
+          <div class="mt-4 flex items-center justify-between">
+            <div class="text-lg font-semibold">₹950</div>
+            <button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring btn-tap">WhatsApp</button>
+          </div>
         </div>
       </article>
 
       <article class="paper rounded-2xl overflow-hidden hover:shadow-lg transition craft-card" data-category="candle" data-product="Scented Soy Candle" data-price="₹650">
         <div class="relative"><img loading="lazy" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1200&auto=format&fit=crop" alt="Scented Soy Candle" class="w-full h-48 sm:h-52 object-cover"/><span class="badge absolute left-3 top-3">Candle</span></div>
-        <div class="p-4"><h4 class="font-medium">Scented Soy Candle</h4><p class="text-sm muted mt-1">Cedar + Orange</p>
-          <div class="flex items-center gap-2 mt-3"><button class="qty-btn" data-qty-dec>−</button><input type="number" value="1" min="1" class="w-12 text-center border rounded-md py-1"/><button class="qty-btn" data-qty-inc>+</button>
-            <select class="ml-auto border rounded-md px-2 py-1 text-sm"><option>Medium</option><option>Large</option></select>
+        <div class="p-4">
+          <h4 class="font-medium">Scented Soy Candle</h4>
+          <p class="text-sm muted mt-1">Cedar + Orange</p>
+          <div class="flex items-center gap-2 mt-3">
+            <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
+            <input aria-label="quantity" type="number" value="1" min="1" class="w-12 text-center border rounded-md py-1"/>
+            <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
+            <select class="ml-auto border rounded-md px-2 py-1 text-sm" aria-label="Select variant">
+              <option>Medium</option><option>Large</option>
+            </select>
           </div>
-          <div class="mt-4 flex items-center justify-between"><div class="text-lg font-semibold">₹650</div><button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring">WhatsApp</button></div>
+          <div class="mt-4 flex items-center justify-between">
+            <div class="text-lg font-semibold">₹650</div>
+            <button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring btn-tap">WhatsApp</button>
+          </div>
         </div>
       </article>
 
       <article class="paper rounded-2xl overflow-hidden hover:shadow-lg transition craft-card" data-category="weave" data-product="Woven Wall Hanging" data-price="₹1,600">
         <div class="relative"><img loading="lazy" src="https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1200&auto=format&fit=crop" alt="Woven Wall Hanging" class="w-full h-48 sm:h-52 object-cover"/><span class="badge absolute left-3 top-3">Weaving</span></div>
-        <div class="p-4"><h4 class="font-medium">Woven Wall Hanging</h4><p class="text-sm muted mt-1">Organic cotton + jute</p>
-          <div class="flex items-center gap-2 mt-3"><button class="qty-btn" data-qty-dec>−</button><input type="number" value="1" min="1" class="w-12 text-center border rounded-md py-1"/><button class="qty-btn" data-qty-inc>+</button>
-            <select class="ml-auto border rounded-md px-2 py-1 text-sm"><option>Natural</option><option>Rose Fade</option></select>
+        <div class="p-4">
+          <h4 class="font-medium">Woven Wall Hanging</h4>
+          <p class="text-sm muted mt-1">Organic cotton + jute</p>
+          <div class="flex items-center gap-2 mt-3">
+            <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
+            <input aria-label="quantity" type="number" value="1" min="1" class="w-12 text-center border rounded-md py-1"/>
+            <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
+            <select class="ml-auto border rounded-md px-2 py-1 text-sm" aria-label="Select variant">
+              <option>Natural</option><option>Rose Fade</option>
+            </select>
           </div>
-          <div class="mt-4 flex items-center justify-between"><div class="text-lg font-semibold">₹1,600</div><button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring">WhatsApp</button></div>
+          <div class="mt-4 flex items-center justify-between">
+            <div class="text-lg font-semibold">₹1,600</div>
+            <button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring btn-tap">WhatsApp</button>
+          </div>
         </div>
       </article>
 
       <article class="paper rounded-2xl overflow-hidden hover:shadow-lg transition craft-card" data-category="gift" data-product="Gift Set — Candle + Mug" data-price="₹1,950">
-        <div class="relative"><img loading="lazy" src="https://images.unsplash.com/photo-1596464716121-d8f3dcf6c6c9?q=80&w=1200&auto=format&fit=crop" alt="Gift Set" class="w-full h-48 sm:h-52 object-cover"/><span class="badge absolute left-3 top-3">Gift</span></div>
-        <div class="p-4"><h4 class="font-medium">Gift Set — Candle + Mug</h4><p class="text-sm muted mt-1">Best-seller combo</p>
-          <div class="flex items-center gap-2 mt-3"><button class="qty-btn" data-qty-dec>−</button><input type="number" value="1" min="1" class="w-12 text-center border rounded-md py-1"/><button class="qty-btn" data-qty-inc>+</button>
-            <select class="ml-auto border rounded-md px-2 py-1 text-sm"><option>Lavender</option><option>Rose</option><option>Citrus</option></select>
+        <div class="relative"><img loading="lazy" src="https://images.unsplash.com/photo-1596464716121-d8f3dcf6c6c9?q=80&w=1200&auto=format&fit=crop" alt="Gift Set — Candle and Mug" class="w-full h-48 sm:h-52 object-cover"/><span class="badge absolute left-3 top-3">Gift</span></div>
+        <div class="p-4">
+          <h4 class="font-medium">Gift Set — Candle + Mug</h4>
+          <p class="text-sm muted mt-1">Best-seller combo</p>
+          <div class="flex items-center gap-2 mt-3">
+            <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
+            <input aria-label="quantity" type="number" value="1" min="1" class="w-12 text-center border rounded-md py-1"/>
+            <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
+            <select class="ml-auto border rounded-md px-2 py-1 text-sm" aria-label="Select variant">
+              <option>Lavender</option><option>Rose</option><option>Citrus</option>
+            </select>
           </div>
-          <div class="mt-4 flex items-center justify-between"><div class="text-lg font-semibold">₹1,950</div><button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring">WhatsApp</button></div>
+          <div class="mt-4 flex items-center justify-between">
+            <div class="text-lg font-semibold">₹1,950</div>
+            <button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring btn-tap">WhatsApp</button>
+          </div>
         </div>
       </article>
 
       <article class="paper rounded-2xl overflow-hidden hover:shadow-lg transition craft-card" data-category="pottery" data-product="Serving Bowl" data-price="₹1,450">
         <div class="relative"><img loading="lazy" src="https://images.unsplash.com/photo-1523419409543-300dbf1568fa?q=80&w=1200&auto=format&fit=crop" alt="Serving Bowl" class="w-full h-48 sm:h-52 object-cover"/><span class="badge absolute left-3 top-3">Pottery</span></div>
-        <div class="p-4"><h4 class="font-medium">Serving Bowl</h4><p class="text-sm muted mt-1">Glazed stoneware</p>
-          <div class="flex items-center gap-2 mt-3"><button class="qty-btn" data-qty-dec>−</button><input type="number" value="1" min="1" class="w-12 text-center border rounded-md py-1"/><button class="qty-btn" data-qty-inc>+</button>
-            <select class="ml-auto border rounded-md px-2 py-1 text-sm"><option>12"</option><option>14"</option></select>
+        <div class="p-4">
+          <h4 class="font-medium">Serving Bowl</h4>
+          <p class="text-sm muted mt-1">Glazed stoneware</p>
+          <div class="flex items-center gap-2 mt-3">
+            <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
+            <input aria-label="quantity" type="number" value="1" min="1" class="w-12 text-center border rounded-md py-1"/>
+            <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
+            <select class="ml-auto border rounded-md px-2 py-1 text-sm" aria-label="Select variant">
+              <option>12"</option><option>14"</option>
+            </select>
           </div>
-          <div class="mt-4 flex items-center justify-between"><div class="text-lg font-semibold">₹1,450</div><button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring">WhatsApp</button></div>
+          <div class="mt-4 flex items-center justify-between">
+            <div class="text-lg font-semibold">₹1,450</div>
+            <button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring btn-tap">WhatsApp</button>
+          </div>
         </div>
       </article>
     </div>
@@ -197,10 +275,10 @@ html{scroll-behavior:smooth}
       <ul class="mt-4 space-y-2 text-sm muted">
         <li>• Beginner-friendly sessions</li><li>• All materials provided</li><li>• Book private groups</li>
       </ul>
-      <a id="workshops" class="mt-6 inline-block px-4 py-2 bg-gradient-to-br from-rose-500 to-pink-500 text-white rounded-md focus-ring" href="#contact">Book a seat</a>
+      <a id="workshops" class="mt-6 inline-block px-4 py-2 bg-gradient-to-br from-rose-500 to-pink-500 text-white rounded-md focus-ring btn-tap" href="#contact">Book a seat</a>
     </div>
     <div class="rounded-2xl overflow-hidden">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="studio" class="w-full h-64 object-cover paper"/>
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="Studio interior" class="w-full h-64 object-cover paper"/>
     </div>
   </section>
 
@@ -211,15 +289,24 @@ html{scroll-behavior:smooth}
         <h4 class="text-xl font-semibold">Get in touch</h4>
         <p class="mt-2 muted">Custom order? Wholesale? Tell us about your idea.</p>
         <dl class="mt-4 text-sm muted">
-          <div><dt class="font-medium">Email</dt><dd>hello@handmade.example</dd></div>
+          <div><dt class="font-medium">Email</dt><dd><a href="mailto:hello@handmade.example" class="text-pink-600">hello@handmade.example</a></dd></div>
           <div class="mt-2"><dt class="font-medium">Location</dt><dd>Local studio — by appointment</dd></div>
         </dl>
       </div>
-      <form class="space-y-3">
-        <input class="w-full border rounded-lg px-3 py-2" placeholder="Name"/>
-        <input class="w-full border rounded-lg px-3 py-2" placeholder="Email"/>
-        <textarea class="w-full border rounded-lg px-3 py-2" rows="3" placeholder="Message"></textarea>
-        <div class="flex justify-end"><button class="px-4 py-2 bg-gradient-to-br from-pink-500 to-rose-400 text-white rounded-lg focus-ring">Send</button></div>
+      <form class="space-y-3" onsubmit="event.preventDefault(); alert('Thanks for reaching out! We will get back to you shortly.');">
+        <label class="block">
+          <span class="sr-only">Name</span>
+          <input class="w-full border rounded-lg px-3 py-2" placeholder="Name" required/>
+        </label>
+        <label class="block">
+          <span class="sr-only">Email</span>
+          <input class="w-full border rounded-lg px-3 py-2" placeholder="Email" type="email" required/>
+        </label>
+        <label class="block">
+          <span class="sr-only">Message</span>
+          <textarea class="w-full border rounded-lg px-3 py-2" rows="3" placeholder="Message" required></textarea>
+        </label>
+        <div class="flex justify-end"><button class="px-4 py-2 bg-gradient-to-br from-pink-500 to-rose-400 text-white rounded-lg focus-ring btn-tap" type="submit">Send</button></div>
       </form>
     </div>
   </section>
@@ -229,29 +316,142 @@ html{scroll-behavior:smooth}
   </footer>
 </main>
 
-<a id="waFab" class="floating-wa focus-ring" href="#" aria-label="Chat on WhatsApp">💬</a>
+<a id="waFab" class="floating-wa focus-ring btn-tap" href="#" aria-label="Chat on WhatsApp">💬</a>
 
 <script>
-// Replace with your WhatsApp number without '+'
-const WHATSAPP_NUMBER='917972197711';
-const waLink=(text)=>{const t=encodeURIComponent(text);const m=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);return m?`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${t}`:`https://wa.me/${WHATSAPP_NUMBER}?text=${t}`};
-// Reduced motion for bg video
-(()=>{const mq=window.matchMedia('(prefers-reduced-motion: reduce)');const v=document.querySelector('.bg-video');const tog=()=>{if(!v)return;mq.matches?(v.pause(),v.removeAttribute('autoplay')):v.play().catch(()=>{})};mq.addEventListener?.('change',tog);tog();})();
-// GSAP
-window.addEventListener('DOMContentLoaded',()=>{gsap.registerPlugin(ScrollTrigger);gsap.from('header',{y:-40,opacity:0,duration:.6,ease:'power2.out'});gsap.from('.accent-underline, .muted',{opacity:0,y:16,duration:.7,stagger:.06,ease:'power2.out'});gsap.utils.toArray('.paper').forEach((el,i)=>{gsap.from(el,{scrollTrigger:{trigger:el,start:'top 88%'},y:22,opacity:0,duration:.55,ease:'power2.out',delay:(i%6)*.04})});});
-// Filters + Search
-const filterButtons=document.querySelectorAll('.filter-btn');const searchBox=document.getElementById('searchBox');const cards=[...document.getElementById('productGrid').querySelectorAll('.craft-card')];let activeFilter='all';document.querySelector('.filter-btn[data-filter="all"]')?.classList.add('ring-2','ring-pink-300');
-function applyFilters(){const q=(searchBox.value||'').trim().toLowerCase();cards.forEach(c=>{const cat=c.dataset.category;const name=(c.dataset.product||'').toLowerCase();const ok=(activeFilter==='all'||cat===activeFilter)&&(!q||name.includes(q));c.style.display=ok?'':'none';});}
-filterButtons.forEach(b=>b.addEventListener('click',()=>{filterButtons.forEach(x=>x.classList.remove('ring-2','ring-pink-300'));b.classList.add('ring-2','ring-pink-300');activeFilter=b.dataset.filter;applyFilters();}));
-searchBox.addEventListener('input',applyFilters);
-// Card qty + WA
-function initCard(card){const dec=card.querySelector('[data-qty-dec]');const inc=card.querySelector('[data-qty-inc]');const qty=card.querySelector('input[type="number"]');const variant=card.querySelector('select');const btn=card.querySelector('.wa-btn');
-dec?.addEventListener('click',()=>{qty.value=Math.max(1,parseInt(qty.value||'1',10)-1)});
-inc?.addEventListener('click',()=>{qty.value=Math.max(1,parseInt(qty.value||'1',10)+1)});
-btn?.addEventListener('click',e=>{e.preventDefault();const name=card.dataset.product||'Product';const price=card.dataset.price||'';const q=Math.max(1,parseInt(qty?.value||'1',10));const varText=variant?` | Variant: ${variant.value}`:'';const msg=`Hi! I'm interested in ${name} (${price}) x${q}${varText}. Please share availability and payment options.`;window.open(waLink(msg),'_blank');});}
-cards.forEach(initCard);
-// Floating WA
-document.getElementById('waFab').addEventListener('click',e=>{e.preventDefault();window.open(waLink("Hi! I'd like to know more about your handmade products and workshops."),'_blank');});
+const WHATSAPP_NUMBER = '917972197711';
+const waLink = (text) => {
+  const t = encodeURIComponent(text);
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  return isMobile
+    ? `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${t}`
+    : `https://wa.me/${WHATSAPP_NUMBER}?text=${t}`;
+};
+
+// Reduce motion for bg video
+(() => {
+  const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const v = document.querySelector('.bg-video');
+  const tog = () => { if (!v) return; mq.matches ? (v.pause(), v.removeAttribute('autoplay')) : v.play().catch(()=>{}); };
+  mq.addEventListener?.('change', tog);
+  tog();
+})();
+
+window.addEventListener('DOMContentLoaded', () => {
+  // GSAP entrance
+  if (window.gsap) {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from('header', { y: -40, opacity: 0, duration: .6, ease: 'power2.out' });
+    gsap.from('.accent-underline, .muted', { opacity: 0, y: 16, duration: .7, stagger: .06, ease: 'power2.out' });
+    gsap.utils.toArray('.paper').forEach((el,i) => {
+      gsap.from(el, { scrollTrigger: { trigger: el, start: 'top 88%' }, y: 22, opacity: 0, duration: .55, ease: 'power2.out', delay: (i%6)*.04 });
+    });
+  }
+
+  // Filters + Search + Sort
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const searchBox = document.getElementById('searchBox');
+  const sortSelect = document.getElementById('sortSelect');
+  const grid = document.getElementById('productGrid');
+  const cards = [...grid.querySelectorAll('.craft-card')];
+
+  // Normalize numeric price for sorting
+  cards.forEach(c => {
+    const priceStr = c.dataset.price || '';
+    const num = parseInt(priceStr.replace(/[^\d]/g,''), 10) || 0;
+    c.dataset.priceNum = String(num);
+  });
+
+  let activeFilter = localStorage.getItem('activeFilter') || 'all';
+  const setActiveFilterUI = () => {
+    filterButtons.forEach(x => {
+      const on = x.dataset.filter === activeFilter;
+      x.classList.toggle('ring-2', on);
+      x.classList.toggle('ring-pink-300', on);
+      x.setAttribute('aria-selected', String(on));
+    });
+  };
+  setActiveFilterUI();
+
+  function applyFilters() {
+    const q = (searchBox.value || '').trim().toLowerCase();
+    cards.forEach(c => {
+      const cat = c.dataset.category;
+      const name = (c.dataset.product || '').toLowerCase();
+      const ok = (activeFilter === 'all' || cat === activeFilter) && (!q || name.includes(q));
+      c.style.display = ok ? '' : 'none';
+    });
+  }
+
+  function sortCards() {
+    const value = sortSelect.value;
+    const visibleCards = cards.filter(c => c.style.display !== 'none');
+    const compare = {
+      'price-asc': (a,b) => (+a.dataset.priceNum) - (+b.dataset.priceNum),
+      'price-desc': (a,b) => (+b.dataset.priceNum) - (+a.dataset.priceNum),
+      'name-asc': (a,b) => (a.dataset.product||'').localeCompare(b.dataset.product||''),
+      'featured': () => 0
+    }[value] || (() => 0);
+
+    visibleCards.sort(compare).forEach(c => grid.appendChild(c));
+  }
+
+  const debounced = (fn, d=180) => {
+    let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), d); };
+  };
+
+  filterButtons.forEach(b => b.addEventListener('click', () => {
+    activeFilter = b.dataset.filter;
+    localStorage.setItem('activeFilter', activeFilter);
+    setActiveFilterUI();
+    applyFilters();
+    sortCards();
+  }));
+
+  searchBox.addEventListener('input', debounced(() => {
+    applyFilters();
+    sortCards();
+  }, 160));
+
+  sortSelect.addEventListener('change', () => sortCards());
+
+  // Initialize with persisted filter
+  applyFilters();
+  sortCards();
+
+  // Card qty + WA
+  function initCard(card) {
+    const dec = card.querySelector('[data-qty-dec]');
+    const inc = card.querySelector('[data-qty-inc]');
+    const qty = card.querySelector('input[type="number"]');
+    const variant = card.querySelector('select');
+    const btn = card.querySelector('.wa-btn');
+
+    dec?.addEventListener('click', () => { qty.value = Math.max(1, parseInt(qty.value||'1',10) - 1); qty.dispatchEvent(new Event('change')); });
+    inc?.addEventListener('click', () => { qty.value = Math.max(1, parseInt(qty.value||'1',10) + 1); qty.dispatchEvent(new Event('change')); });
+    qty?.addEventListener('change', () => {
+      const n = Math.max(1, parseInt(qty.value||'1',10));
+      qty.value = String(n);
+    });
+
+    btn?.addEventListener('click', e => {
+      e.preventDefault();
+      const name = card.dataset.product || 'Product';
+      const price = card.dataset.price || '';
+      const q = Math.max(1, parseInt(qty?.value||'1',10));
+      const varText = variant ? ` | Variant: ${variant.value}` : '';
+      const msg = `Hi! I'm interested in ${name} (${price}) x${q}${varText}. Please share availability and payment options.`;
+      window.open(waLink(msg), '_blank');
+    });
+  }
+  cards.forEach(initCard);
+
+  // Floating WA
+  document.getElementById('waFab').addEventListener('click', e => {
+    e.preventDefault();
+    window.open(waLink("Hi! I'd like to know more about your handmade products and workshops."), '_blank');
+  });
+});
 </script>
 </body>
 </html>
