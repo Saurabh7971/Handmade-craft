@@ -27,9 +27,9 @@
   --bg-2:#ffe6f2;
   --accent:#ec4899;
   --accent-2:#f472b6;
-  --muted:#6b7280;
-  --card:rgba(255,255,255,0.95);
-  --glass-border:rgba(236,72,153,0.15)
+  --muted:#9d174d;
+  --card:rgba(255,255,255,0.97);
+  --glass-border:rgba(236,72,153,0.18)
 }
 html,body{height:100%}
 body{
@@ -40,7 +40,7 @@ body{
     linear-gradient(180deg,var(--bg-1) 0%,var(--bg-2) 70%);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
-  color:#1f2937
+  color:#831843
 }
 .bg-video-wrap{position:fixed;inset:0;z-index:-10;overflow:hidden;pointer-events:none}
 .bg-video{position:absolute;min-width:100%;min-height:100%;top:50%;left:50%;transform:translate(-50%,-50%);object-fit:cover;filter:saturate(90%) brightness(.92) contrast(1.05) opacity(.18) blur(1px)}
@@ -48,14 +48,14 @@ body{
   radial-gradient(1200px 600px at 20% -10%,rgba(255,182,203,.4) 0%,transparent 55%),
   radial-gradient(1000px 500px at 100% 0%,rgba(255,192,203,.35) 0%,transparent 50%),
   linear-gradient(180deg,rgba(255,255,255,.4),rgba(255,255,255,.4) 65%),
-  linear-gradient(0deg,rgba(245,90,140,.12),rgba(245,90,140,.12));
+  linear-gradient(0deg,rgba(245,90,140,.15),rgba(245,90,140,.15));
   mix-blend-mode:screen
 }
 .hand{font-family:"Patrick Hand",cursive}
 .paper{
   background:var(--card);
-  border:1px solid var(--glass-border);
-  box-shadow:0 12px 40px rgba(15,23,42,0.08);
+  border:1.5px solid var(--glass-border);
+  box-shadow:0 12px 40px rgba(236,72,153,0.08);
   backdrop-filter:blur(10px) saturate(130%)
 }
 .accent-underline{position:relative}
@@ -72,17 +72,18 @@ body{
 }
 .muted{color:var(--muted)}
 .focus-ring:focus{
-  outline:2px solid rgba(236,72,153,0.25);
+  outline:2px solid rgba(236,72,153,0.3);
   outline-offset:3px
 }
 .pill{
-  border:1.5px solid rgba(236,72,153,0.2);
-  background:linear-gradient(180deg,rgba(255,255,255,0.95),rgba(255,255,255,0.85))
+  border:1.5px solid rgba(236,72,153,0.25);
+  background:linear-gradient(180deg,rgba(255,255,255,0.95),rgba(255,255,255,0.85));
+  color:#831843
 }
 .wa-btn{
   background:linear-gradient(135deg,var(--accent),var(--accent-2));
   color:#fff;
-  font-weight:500;
+  font-weight:600;
   transition:all 0.2s ease
 }
 .wa-btn:hover{
@@ -100,6 +101,7 @@ body{
   border:1.5px solid rgba(236,72,153,0.25);
   background:#fff;
   font-weight:600;
+  color:#831843;
   transition:all 0.2s ease
 }
 .qty-btn:hover{
@@ -131,22 +133,22 @@ body{
 .badge{
   font-size:11px;
   line-height:1;
-  padding:7px 10px;
+  padding:7px 12px;
   border-radius:9999px;
-  border:1px solid rgba(236,72,153,0.25);
+  border:1.5px solid rgba(236,72,153,0.25);
   background:#fff;
   color:#be185d;
-  font-weight:500;
+  font-weight:600;
   letter-spacing:0.3px
 }
 html{scroll-behavior:smooth}
 .hero-glass{
-  background:rgba(255,255,255,0.85);
-  border:1px solid rgba(236,72,153,0.18);
-  box-shadow:0 16px 40px rgba(15,23,42,0.08);
+  background:rgba(255,255,255,0.9);
+  border:1.5px solid rgba(236,72,153,0.2);
+  box-shadow:0 16px 40px rgba(236,72,153,0.1);
   backdrop-filter:blur(12px) saturate(140%)
 }
-.headline-shadow{text-shadow:0 2px 4px rgba(0,0,0,0.05)}
+.headline-shadow{text-shadow:0 2px 4px rgba(255,255,255,0.5)}
 .btn-tap{
   transform:translateY(0);
   transition:transform 0.1s ease, box-shadow 0.2s ease
@@ -174,37 +176,38 @@ html{scroll-behavior:smooth}
   justify-content:center;
   font-size:1.75rem;
   background:linear-gradient(135deg,#fce7f3,#fbcfe8);
-  border:2px solid rgba(236,72,153,0.15)
+  border:2px solid rgba(236,72,153,0.2);
+  color:#ec4899
 }
 .price-display{
   font-family:Inter,system-ui;
   font-weight:700;
-  color:#1f2937;
+  color:#831843;
   font-size:1.25rem
 }
 .product-title{
   font-weight:600;
-  color:#1f2937;
+  color:#831843;
   font-size:1.125rem;
   line-height:1.4
 }
 .product-description{
-  color:#6b7280;
+  color:#9d174d;
   font-size:0.875rem;
   line-height:1.5
 }
 .card-hover{
   transition:all 0.3s ease;
-  border:1px solid rgba(236,72,153,0.1)
+  border:1.5px solid rgba(236,72,153,0.15)
 }
 .card-hover:hover{
   transform:translateY(-5px);
   box-shadow:0 20px 50px rgba(236,72,153,0.15);
-  border-color:rgba(236,72,153,0.25)
+  border-color:rgba(236,72,153,0.3)
 }
 .section-heading{
   font-weight:700;
-  color:#1f2937;
+  color:#831843;
   font-size:1.875rem;
   letter-spacing:-0.5px
 }
@@ -213,6 +216,81 @@ html{scroll-behavior:smooth}
   font-weight:500;
   font-size:1rem;
   opacity:0.9
+}
+.select-style{
+  border:1.5px solid rgba(236,72,153,0.2);
+  border-radius:10px;
+  padding:0.75rem 1rem;
+  color:#831843;
+  font-weight:500;
+  background:#fff;
+  width:100%
+}
+.select-style:focus{
+  border-color:var(--accent);
+  outline:none;
+  box-shadow:0 0 0 3px rgba(236,72,153,0.1)
+}
+.input-style{
+  border:1.5px solid rgba(236,72,153,0.2);
+  border-radius:10px;
+  padding:0.75rem 1rem;
+  color:#831843;
+  font-weight:500;
+  background:#fff;
+  width:100%
+}
+.input-style:focus{
+  border-color:var(--accent);
+  outline:none;
+  box-shadow:0 0 0 3px rgba(236,72,153,0.1)
+}
+.textarea-style{
+  border:1.5px solid rgba(236,72,153,0.2);
+  border-radius:10px;
+  padding:0.75rem 1rem;
+  color:#831843;
+  font-weight:500;
+  background:#fff;
+  width:100%;
+  resize:vertical
+}
+.textarea-style:focus{
+  border-color:var(--accent);
+  outline:none;
+  box-shadow:0 0 0 3px rgba(236,72,153,0.1)
+}
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .card-content {
+    padding: 1.25rem;
+  }
+  .product-title {
+    font-size: 1rem;
+  }
+  .product-description {
+    font-size: 0.8125rem;
+  }
+  .mobile-flex-col {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .mobile-full-width {
+    width: 100%;
+  }
+  .mobile-padding {
+    padding: 1rem;
+  }
+  .mobile-text-center {
+    text-align: center;
+  }
+  .mobile-gap-3 {
+    gap: 0.75rem;
+  }
 }
 </style>
 <script defer src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
@@ -230,32 +308,32 @@ html{scroll-behavior:smooth}
 </div>
 
 <!-- Header -->
-<header class="sticky top-0 z-30 bg-white/80 backdrop-blur-md shadow-sm">
-  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+<header class="sticky top-0 z-30 bg-white/90 backdrop-blur-md shadow-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
     <a class="flex items-center gap-3" href="#" aria-label="Go to homepage">
-      <div class="w-12 h-12 rounded-full bg-gradient-to-br from-pink-100 to-white flex items-center justify-center paper border-2 border-pink-100">
-        <span class="hand text-2xl text-pink-600">A</span>
+      <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-pink-100 to-white flex items-center justify-center paper border-2 border-pink-100">
+        <span class="hand text-xl sm:text-2xl text-pink-600">A</span>
       </div>
       <div>
-        <h1 class="text-lg font-bold text-gray-800">Afreen Handmade Goods</h1>
+        <h1 class="text-base sm:text-lg font-bold text-pink-900">Afreen Handmade Goods</h1>
         <p class="text-xs text-pink-600 font-medium">Handmade Crochet & Crafts</p>
       </div>
     </a>
 
     <!-- Desktop nav -->
     <nav class="hidden md:flex items-center gap-6 text-sm" aria-label="Primary">
-      <a href="#shop" class="font-medium text-gray-700 hover:text-pink-600 transition-colors">All Products</a>
-      <a href="#crochet" class="font-medium text-gray-700 hover:text-pink-600 transition-colors">Crochet</a>
-      <a href="#frames" class="font-medium text-gray-700 hover:text-pink-600 transition-colors">Frames</a>
-      <a href="#slambooks" class="font-medium text-gray-700 hover:text-pink-600 transition-colors">Slam Books</a>
-      <a href="#about" class="font-medium text-gray-700 hover:text-pink-600 transition-colors">About</a>
-      <button class="ml-2 px-5 py-2.5 bg-gradient-to-br from-pink-500 to-rose-400 text-white rounded-full shadow-lg hover:from-pink-600 hover:to-rose-500 focus-ring btn-tap font-medium transition-all">Visit Store</button>
+      <a href="#shop" class="font-medium text-pink-800 hover:text-pink-600 transition-colors">All Products</a>
+      <a href="#crochet" class="font-medium text-pink-800 hover:text-pink-600 transition-colors">Crochet</a>
+      <a href="#frames" class="font-medium text-pink-800 hover:text-pink-600 transition-colors">Frames</a>
+      <a href="#slambooks" class="font-medium text-pink-800 hover:text-pink-600 transition-colors">Slam Books</a>
+      <a href="#about" class="font-medium text-pink-800 hover:text-pink-600 transition-colors">About</a>
+      <button class="ml-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-gradient-to-br from-pink-500 to-rose-400 text-white rounded-full shadow-lg hover:from-pink-600 hover:to-rose-500 focus-ring btn-tap font-medium transition-all text-sm sm:text-base">Visit Store</button>
     </nav>
 
     <!-- Mobile hamburger -->
-    <button id="menuToggle" class="md:hidden p-2.5 rounded-lg bg-white paper border border-pink-100 focus-ring"
+    <button id="menuToggle" class="md:hidden p-2 rounded-lg bg-white paper border border-pink-100 focus-ring"
             aria-label="Open menu" aria-controls="mobileNav" aria-expanded="false">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M4 6h16M4 12h16M4 18h16" stroke="#ec4899" stroke-width="2.5" stroke-linecap="round"/>
       </svg>
     </button>
@@ -264,89 +342,89 @@ html{scroll-behavior:smooth}
 
 <!-- Mobile drawer -->
 <div id="mobileNav" class="md:hidden fixed inset-0 z-40 hidden" role="dialog" aria-modal="true">
-  <div id="mobileBackdrop" class="absolute inset-0 bg-black/40"></div>
-  <div id="mobilePanel" class="ml-auto h-full w-80 max-w-[85vw] bg-white paper shadow-2xl translate-x-full transition-transform duration-300">
-    <div class="flex items-center justify-between p-5 border-b border-pink-50">
-      <span class="font-bold text-gray-800 text-lg">Menu</span>
-      <button id="menuClose" class="p-2.5 rounded-lg bg-pink-50 focus-ring" aria-label="Close menu">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M6 6l12 12M18 6l-12 12" stroke="#1f2937" stroke-width="2.5" stroke-linecap="round"/>
+  <div id="mobileBackdrop" class="absolute inset-0 bg-pink-900/20"></div>
+  <div id="mobilePanel" class="ml-auto h-full w-72 max-w-[85vw] bg-white paper shadow-2xl translate-x-full transition-transform duration-300">
+    <div class="flex items-center justify-between p-4 border-b border-pink-50">
+      <span class="font-bold text-pink-900 text-lg">Menu</span>
+      <button id="menuClose" class="p-2 rounded-lg bg-pink-50 focus-ring" aria-label="Close menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 6l12 12M18 6l-12 12" stroke="#831843" stroke-width="2.5" stroke-linecap="round"/>
         </svg>
       </button>
     </div>
-    <nav class="p-5 flex flex-col gap-4" aria-label="Mobile">
-      <a class="py-3 border-b border-pink-50 font-medium text-gray-700 hover:text-pink-600" href="#shop">All Products</a>
-      <a class="py-3 border-b border-pink-50 font-medium text-gray-700 hover:text-pink-600" href="#crochet">Crochet</a>
-      <a class="py-3 border-b border-pink-50 font-medium text-gray-700 hover:text-pink-600" href="#frames">Frames</a>
-      <a class="py-3 border-b border-pink-50 font-medium text-gray-700 hover:text-pink-600" href="#slambooks">Slam Books</a>
-      <a class="py-3 border-b border-pink-50 font-medium text-gray-700 hover:text-pink-600" href="#about">About</a>
-      <a class="mt-4 inline-flex items-center justify-center px-5 py-3 bg-gradient-to-br from-pink-500 to-rose-400 text-white rounded-xl focus-ring font-medium"
+    <nav class="p-4 flex flex-col gap-3" aria-label="Mobile">
+      <a class="py-3 border-b border-pink-50 font-medium text-pink-800 hover:text-pink-600" href="#shop">All Products</a>
+      <a class="py-3 border-b border-pink-50 font-medium text-pink-800 hover:text-pink-600" href="#crochet">Crochet</a>
+      <a class="py-3 border-b border-pink-50 font-medium text-pink-800 hover:text-pink-600" href="#frames">Frames</a>
+      <a class="py-3 border-b border-pink-50 font-medium text-pink-800 hover:text-pink-600" href="#slambooks">Slam Books</a>
+      <a class="py-3 border-b border-pink-50 font-medium text-pink-800 hover:text-pink-600" href="#about">About</a>
+      <a class="mt-4 inline-flex items-center justify-center px-4 py-3 bg-gradient-to-br from-pink-500 to-rose-400 text-white rounded-xl focus-ring font-medium text-sm"
          href="#shop">Visit Store</a>
     </nav>
   </div>
 </div>
 
 <!-- Main -->
-<main class="max-w-6xl mx-auto px-6 py-12">
+<main class="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
   <!-- Hero -->
-  <section class="grid lg:grid-cols-2 gap-10 items-center mb-20">
-    <div class="hero-glass rounded-3xl p-6 sm:p-8">
-      <h2 class="hand text-4xl sm:text-5xl lg:text-6xl text-pink-600 leading-tight accent-underline headline-shadow mb-4">Handmade Crochet & Crafts by Afreen</h2>
-      <p class="text-gray-600 text-lg leading-relaxed mb-8 max-w-xl">Specializing in beautiful crochet flowers, personalized frames, memory slam books, cozy mufflers, and handcrafted pottery. Each piece is made with love and attention to detail.</p>
-      <div class="flex flex-wrap gap-4 mb-8">
-        <a href="#crochet" class="inline-flex items-center gap-3 px-6 py-3.5 bg-gradient-to-br from-pink-500 to-rose-400 text-white rounded-xl shadow-lg hover:from-pink-600 hover:to-rose-500 focus-ring btn-tap font-medium transition-all">
+  <section class="grid lg:grid-cols-2 gap-8 sm:gap-10 items-center mb-12 sm:mb-20">
+    <div class="hero-glass rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8">
+      <h2 class="hand text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-pink-600 leading-tight accent-underline headline-shadow mb-3 sm:mb-4">Handmade Crochet & Crafts by Afreen</h2>
+      <p class="text-pink-800 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8 max-w-xl">Specializing in beautiful crochet flowers, personalized frames, memory slam books, cozy mufflers, and handcrafted pottery. Each piece is made with love and attention to detail.</p>
+      <div class="flex flex-wrap gap-3 sm:gap-4 mb-6 sm:mb-8">
+        <a href="#crochet" class="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-3 sm:py-3.5 bg-gradient-to-br from-pink-500 to-rose-400 text-white rounded-xl shadow-lg hover:from-pink-600 hover:to-rose-500 focus-ring btn-tap font-medium transition-all text-sm sm:text-base">
           <span>🧶</span> Shop Crochet
         </a>
-        <a href="#frames" class="inline-flex items-center gap-3 px-6 py-3.5 border-2 border-pink-200 rounded-xl text-pink-600 hover:bg-pink-50 focus-ring btn-tap font-medium transition-all">
+        <a href="#frames" class="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-3 sm:py-3.5 border-2 border-pink-200 rounded-xl text-pink-600 hover:bg-pink-50 focus-ring btn-tap font-medium transition-all text-sm sm:text-base">
           <span>🖼️</span> Browse Frames
         </a>
       </div>
-      <div class="grid grid-cols-2 gap-4">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center text-pink-600 text-lg">🌺</div>
-          <span class="text-gray-700 font-medium">Crochet Flowers</span>
+      <div class="grid grid-cols-2 gap-3 sm:gap-4">
+        <div class="flex items-center gap-2 sm:gap-3">
+          <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-pink-100 flex items-center justify-center text-pink-600 text-base sm:text-lg">🌺</div>
+          <span class="text-pink-800 font-medium text-sm sm:text-base">Crochet Flowers</span>
         </div>
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center text-pink-600 text-lg">🖼️</div>
-          <span class="text-gray-700 font-medium">Custom Frames</span>
+        <div class="flex items-center gap-2 sm:gap-3">
+          <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-pink-100 flex items-center justify-center text-pink-600 text-base sm:text-lg">🖼️</div>
+          <span class="text-pink-800 font-medium text-sm sm:text-base">Custom Frames</span>
         </div>
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center text-pink-600 text-lg">📓</div>
-          <span class="text-gray-700 font-medium">Slam Books</span>
+        <div class="flex items-center gap-2 sm:gap-3">
+          <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-pink-100 flex items-center justify-center text-pink-600 text-base sm:text-lg">📓</div>
+          <span class="text-pink-800 font-medium text-sm sm:text-base">Slam Books</span>
         </div>
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center text-pink-600 text-lg">🧣</div>
-          <span class="text-gray-700 font-medium">Handmade Mufflers</span>
+        <div class="flex items-center gap-2 sm:gap-3">
+          <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-pink-100 flex items-center justify-center text-pink-600 text-base sm:text-lg">🧣</div>
+          <span class="text-pink-800 font-medium text-sm sm:text-base">Handmade Mufflers</span>
         </div>
       </div>
     </div>
 
-    <div class="relative">
-      <div class="rounded-3xl overflow-hidden paper border-2 border-pink-100">
-        <video class="w-full h-64 sm:h-72 md:h-80 lg:h-96 object-cover" autoplay muted loop playsinline preload="metadata" poster="https://images.unsplash.com/photo-1520975698519-4b93c3ba1c8b?q=80&w=1600&auto=format&fit=crop" aria-label="Handmade crafts video">
+    <div class="relative mt-6 sm:mt-0">
+      <div class="rounded-2xl sm:rounded-3xl overflow-hidden paper border-2 border-pink-100">
+        <video class="w-full h-48 sm:h-64 md:h-72 lg:h-80 xl:h-96 object-cover" autoplay muted loop playsinline preload="metadata" poster="https://images.unsplash.com/photo-1520975698519-4b93c3ba1c8b?q=80&w=1600&auto=format&fit=crop" aria-label="Handmade crafts video">
           <source src="https://cdn.pixabay.com/video/2022/12/15/143046-781982565_large.mp4" type="video/mp4"/>
         </video>
       </div>
-      <div class="mt-6 grid grid-cols-3 gap-4">
-        <div class="paper rounded-xl p-4 flex items-center gap-4 card-hover">
-          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-pink-100 to-rose-50 flex items-center justify-center text-pink-600 text-xl">🧶</div>
+      <div class="mt-4 sm:mt-6 grid grid-cols-3 gap-3 sm:gap-4">
+        <div class="paper rounded-lg sm:rounded-xl p-3 sm:p-4 flex items-center gap-3 sm:gap-4 card-hover">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-pink-100 to-rose-50 flex items-center justify-center text-pink-600 text-lg sm:text-xl">🧶</div>
           <div class="flex-1">
-            <div class="font-semibold text-gray-800">Crochet Items</div>
-            <div class="text-sm text-pink-600">Flowers & More</div>
+            <div class="font-semibold text-pink-900 text-sm sm:text-base">Crochet Items</div>
+            <div class="text-xs sm:text-sm text-pink-600">Flowers & More</div>
           </div>
         </div>
-        <div class="paper rounded-xl p-4 flex items-center gap-4 card-hover">
-          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-pink-100 to-rose-50 flex items-center justify-center text-pink-600 text-xl">🕯️</div>
+        <div class="paper rounded-lg sm:rounded-xl p-3 sm:p-4 flex items-center gap-3 sm:gap-4 card-hover">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-pink-100 to-rose-50 flex items-center justify-center text-pink-600 text-lg sm:text-xl">🕯️</div>
           <div class="flex-1">
-            <div class="font-semibold text-gray-800">Soy Candles</div>
-            <div class="text-sm text-pink-600">Small-batch</div>
+            <div class="font-semibold text-pink-900 text-sm sm:text-base">Soy Candles</div>
+            <div class="text-xs sm:text-sm text-pink-600">Small-batch</div>
           </div>
         </div>
-        <div class="paper rounded-xl p-4 flex items-center gap-4 card-hover">
-          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-pink-100 to-rose-50 flex items-center justify-center text-pink-600 text-xl">🍶</div>
+        <div class="paper rounded-lg sm:rounded-xl p-3 sm:p-4 flex items-center gap-3 sm:gap-4 card-hover">
+          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-pink-100 to-rose-50 flex items-center justify-center text-pink-600 text-lg sm:text-xl">🍶</div>
           <div class="flex-1">
-            <div class="font-semibold text-gray-800">Pottery</div>
-            <div class="text-sm text-pink-600">Glazed finish</div>
+            <div class="font-semibold text-pink-900 text-sm sm:text-base">Pottery</div>
+            <div class="text-xs sm:text-sm text-pink-600">Glazed finish</div>
           </div>
         </div>
       </div>
@@ -354,101 +432,104 @@ html{scroll-behavior:smooth}
   </section>
 
   <!-- Crochet Section -->
-  <section id="crochet" class="mb-20">
-    <div class="flex items-center gap-5 mb-10">
-      <div class="section-icon">
-        <span class="text-pink-600">🧶</span>
+  <section id="crochet" class="mb-12 sm:mb-20">
+    <div class="flex items-center gap-4 mb-6 sm:mb-10">
+      <div class="section-icon w-12 h-12 sm:w-14 sm:h-14">
+        <span class="text-pink-600 text-xl sm:text-2xl">🧶</span>
       </div>
       <div>
-        <h3 class="section-heading">Crochet Collection</h3>
-        <p class="section-subtitle mt-2">Handmade crochet flowers, accessories, and home decor</p>
+        <h3 class="section-heading text-2xl sm:text-3xl">Crochet Collection</h3>
+        <p class="section-subtitle mt-1 sm:mt-2 text-sm sm:text-base">Handmade crochet flowers, accessories, and home decor</p>
       </div>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
       <!-- Crochet Flower Bouquet -->
-      <article class="paper rounded-2xl overflow-hidden card-hover" data-category="crochet" data-product="Crochet Flower Bouquet">
+      <article class="paper rounded-xl sm:rounded-2xl overflow-hidden card-hover" data-category="crochet" data-product="Crochet Flower Bouquet">
         <div class="relative">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1605651201478-b7c60e3d7453?q=80&w=1200&auto=format&fit=crop" alt="Crochet Flower Bouquet" class="w-full h-56 object-cover"/>
-          <span class="badge absolute left-4 top-4">Crochet Flower</span>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1605651201478-b7c60e3d7453?q=80&w=1200&auto=format&fit=crop" alt="Crochet Flower Bouquet" class="w-full h-48 sm:h-56 object-cover"/>
+          <span class="badge absolute left-3 sm:left-4 top-3 sm:top-4">Crochet Flower</span>
         </div>
-        <div class="p-5">
-          <h4 class="product-title">Crochet Flower Bouquet</h4>
-          <p class="product-description mt-2">Rose, Daisy & Sunflower set - everlasting beauty</p>
-          <div class="flex items-center gap-3 mt-4">
-            <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
-            <input aria-label="quantity" type="number" value="1" min="1" class="w-14 text-center border-2 border-pink-100 rounded-lg py-1.5 font-medium focus-ring"/>
-            <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
-            <select class="ml-auto border-2 border-pink-100 rounded-lg px-3 py-1.5 text-sm font-medium focus-ring" aria-label="Select flower type">
+        <div class="p-4 sm:p-5">
+          <h4 class="product-title text-base sm:text-lg">Crochet Flower Bouquet</h4>
+          <p class="product-description mt-1 sm:mt-2 text-sm">Rose, Daisy & Sunflower set - everlasting beauty</p>
+          <div class="flex flex-col sm:flex-row sm:items-center gap-3 mt-3 sm:mt-4">
+            <div class="flex items-center gap-2 sm:gap-3">
+              <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
+              <input aria-label="quantity" type="number" value="1" min="1" class="w-12 sm:w-14 text-center input-style py-1.5"/>
+              <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
+            </div>
+            <select class="select-style text-sm sm:text-base py-2" aria-label="Select flower type">
               <option data-price="1200">Mixed Bouquet - ₹1,200</option>
               <option data-price="1100">Rose Only - ₹1,100</option>
               <option data-price="1300">Sunflower Set - ₹1,300</option>
             </select>
           </div>
-          <div class="mt-6 flex items-center justify-between">
-            <div class="price-display">₹<span class="dynamic-price">1,200</span></div>
-            <button class="wa-btn px-4 py-2.5 rounded-lg font-medium focus-ring btn-tap">
-              <span class="hidden sm:inline">WhatsApp Order</span>
-              <span class="sm:hidden">Order</span>
+          <div class="mt-4 sm:mt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-0">
+            <div class="price-display text-lg sm:text-xl">₹<span class="dynamic-price">1,200</span></div>
+            <button class="wa-btn px-4 py-2.5 rounded-lg font-medium focus-ring btn-tap text-sm sm:text-base w-full sm:w-auto">
+              WhatsApp Order
             </button>
           </div>
         </div>
       </article>
 
       <!-- Crochet Muffler -->
-      <article class="paper rounded-2xl overflow-hidden card-hover" data-category="crochet" data-product="Crochet Muffler">
+      <article class="paper rounded-xl sm:rounded-2xl overflow-hidden card-hover" data-category="crochet" data-product="Crochet Muffler">
         <div class="relative">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1200&auto=format&fit=crop" alt="Crochet Muffler" class="w-full h-56 object-cover"/>
-          <span class="badge absolute left-4 top-4">Winter Muffler</span>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1200&auto=format&fit=crop" alt="Crochet Muffler" class="w-full h-48 sm:h-56 object-cover"/>
+          <span class="badge absolute left-3 sm:left-4 top-3 sm:top-4">Winter Muffler</span>
         </div>
-        <div class="p-5">
-          <h4 class="product-title">Crochet Muffler</h4>
-          <p class="product-description mt-2">Warm, soft & stylish winter accessory - cozy comfort</p>
-          <div class="flex items-center gap-3 mt-4">
-            <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
-            <input aria-label="quantity" type="number" value="1" min="1" class="w-14 text-center border-2 border-pink-100 rounded-lg py-1.5 font-medium focus-ring"/>
-            <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
-            <select class="ml-auto border-2 border-pink-100 rounded-lg px-3 py-1.5 text-sm font-medium focus-ring" aria-label="Select color">
+        <div class="p-4 sm:p-5">
+          <h4 class="product-title text-base sm:text-lg">Crochet Muffler</h4>
+          <p class="product-description mt-1 sm:mt-2 text-sm">Warm, soft & stylish winter accessory</p>
+          <div class="flex flex-col sm:flex-row sm:items-center gap-3 mt-3 sm:mt-4">
+            <div class="flex items-center gap-2 sm:gap-3">
+              <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
+              <input aria-label="quantity" type="number" value="1" min="1" class="w-12 sm:w-14 text-center input-style py-1.5"/>
+              <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
+            </div>
+            <select class="select-style text-sm sm:text-base py-2" aria-label="Select color">
               <option data-price="1100">Cream - ₹1,100</option>
               <option data-price="1150">Rose Pink - ₹1,150</option>
               <option data-price="1200">Sky Blue - ₹1,200</option>
               <option data-price="1250">Mint Green - ₹1,250</option>
             </select>
           </div>
-          <div class="mt-6 flex items-center justify-between">
-            <div class="price-display">₹<span class="dynamic-price">1,100</span></div>
-            <button class="wa-btn px-4 py-2.5 rounded-lg font-medium focus-ring btn-tap">
-              <span class="hidden sm:inline">WhatsApp Order</span>
-              <span class="sm:hidden">Order</span>
+          <div class="mt-4 sm:mt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-0">
+            <div class="price-display text-lg sm:text-xl">₹<span class="dynamic-price">1,100</span></div>
+            <button class="wa-btn px-4 py-2.5 rounded-lg font-medium focus-ring btn-tap text-sm sm:text-base w-full sm:w-auto">
+              WhatsApp Order
             </button>
           </div>
         </div>
       </article>
 
       <!-- Crochet Coasters -->
-      <article class="paper rounded-2xl overflow-hidden card-hover" data-category="crochet" data-product="Crochet Coaster Set">
+      <article class="paper rounded-xl sm:rounded-2xl overflow-hidden card-hover" data-category="crochet" data-product="Crochet Coaster Set">
         <div class="relative">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop" alt="Crochet Coaster Set" class="w-full h-56 object-cover"/>
-          <span class="badge absolute left-4 top-4">Home Decor</span>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop" alt="Crochet Coaster Set" class="w-full h-48 sm:h-56 object-cover"/>
+          <span class="badge absolute left-3 sm:left-4 top-3 sm:top-4">Home Decor</span>
         </div>
-        <div class="p-5">
-          <h4 class="product-title">Crochet Coaster Set</h4>
-          <p class="product-description mt-2">Set of 4 colorful coasters - protect surfaces in style</p>
-          <div class="flex items-center gap-3 mt-4">
-            <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
-            <input aria-label="quantity" type="number" value="1" min="1" class="w-14 text-center border-2 border-pink-100 rounded-lg py-1.5 font-medium focus-ring"/>
-            <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
-            <select class="ml-auto border-2 border-pink-100 rounded-lg px-3 py-1.5 text-sm font-medium focus-ring" aria-label="Select design">
+        <div class="p-4 sm:p-5">
+          <h4 class="product-title text-base sm:text-lg">Crochet Coaster Set</h4>
+          <p class="product-description mt-1 sm:mt-2 text-sm">Set of 4 colorful coasters</p>
+          <div class="flex flex-col sm:flex-row sm:items-center gap-3 mt-3 sm:mt-4">
+            <div class="flex items-center gap-2 sm:gap-3">
+              <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
+              <input aria-label="quantity" type="number" value="1" min="1" class="w-12 sm:w-14 text-center input-style py-1.5"/>
+              <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
+            </div>
+            <select class="select-style text-sm sm:text-base py-2" aria-label="Select design">
               <option data-price="450">Floral Set - ₹450</option>
               <option data-price="480">Geometric Set - ₹480</option>
               <option data-price="500">Rainbow Set - ₹500</option>
             </select>
           </div>
-          <div class="mt-6 flex items-center justify-between">
-            <div class="price-display">₹<span class="dynamic-price">450</span></div>
-            <button class="wa-btn px-4 py-2.5 rounded-lg font-medium focus-ring btn-tap">
-              <span class="hidden sm:inline">WhatsApp Order</span>
-              <span class="sm:hidden">Order</span>
+          <div class="mt-4 sm:mt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-0">
+            <div class="price-display text-lg sm:text-xl">₹<span class="dynamic-price">450</span></div>
+            <button class="wa-btn px-4 py-2.5 rounded-lg font-medium focus-ring btn-tap text-sm sm:text-base w-full sm:w-auto">
+              WhatsApp Order
             </button>
           </div>
         </div>
@@ -457,97 +538,106 @@ html{scroll-behavior:smooth}
   </section>
 
   <!-- Custom Frames Section -->
-  <section id="frames" class="mb-20">
-    <div class="flex items-center gap-5 mb-10">
-      <div class="section-icon">
-        <span class="text-pink-600">🖼️</span>
+  <section id="frames" class="mb-12 sm:mb-20">
+    <div class="flex items-center gap-4 mb-6 sm:mb-10">
+      <div class="section-icon w-12 h-12 sm:w-14 sm:h-14">
+        <span class="text-pink-600 text-xl sm:text-2xl">🖼️</span>
       </div>
       <div>
-        <h3 class="section-heading">Custom Frames</h3>
-        <p class="section-subtitle mt-2">Personalized photo frames with handmade details</p>
+        <h3 class="section-heading text-2xl sm:text-3xl">Custom Frames</h3>
+        <p class="section-subtitle mt-1 sm:mt-2 text-sm sm:text-base">Personalized photo frames with handmade details</p>
       </div>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
       <!-- Crochet Border Frame -->
-      <article class="paper rounded-2xl overflow-hidden card-hover" data-category="frame" data-product="Custom Crochet Frame">
+      <article class="paper rounded-xl sm:rounded-2xl overflow-hidden card-hover" data-category="frame" data-product="Custom Crochet Frame">
         <div class="relative">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=1200&auto=format&fit=crop" alt="Custom Crochet Frame" class="w-full h-56 object-cover"/>
-          <span class="badge absolute left-4 top-4">Crochet Border</span>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=1200&auto=format&fit=crop" alt="Custom Crochet Frame" class="w-full h-48 sm:h-56 object-cover"/>
+          <span class="badge absolute left-3 sm:left-4 top-3 sm:top-4">Crochet Border</span>
         </div>
-        <div class="p-5">
-          <h4 class="product-title">Custom Crochet Frame</h4>
-          <p class="product-description mt-2">Personalized photo frame with delicate crochet border</p>
-          <div class="flex items-center gap-3 mt-4">
-            <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
-            <input aria-label="quantity" type="number" value="1" min="1" class="w-14 text-center border-2 border-pink-100 rounded-lg py-1.5 font-medium focus-ring"/>
-            <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
-            <select class="ml-auto border-2 border-pink-100 rounded-lg px-3 py-1.5 text-sm font-medium focus-ring" aria-label="Select size">
+        <div class="p-4 sm:p-5">
+          <h4 class="product-title text-base sm:text-lg">Custom Crochet Frame</h4>
+          <p class="product-description mt-1 sm:mt-2 text-sm">Personalized photo frame with delicate crochet border</p>
+          <div class="flex flex-col sm:flex-row sm:items-center gap-3 mt-3 sm:mt-4">
+            <div class="flex items-center gap-2 sm:gap-3">
+              <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
+              <input aria-label="quantity" type="number" value="1" min="1" class="w-12 sm:w-14 text-center input-style py-1.5"/>
+              <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
+            </div>
+            <select class="select-style text-sm sm:text-base py-2" aria-label="Select size">
               <option data-price="850">4x6 inch - ₹850</option>
               <option data-price="950">5x7 inch - ₹950</option>
               <option data-price="1200">8x10 inch - ₹1,200</option>
               <option data-price="1500">11x14 inch - ₹1,500</option>
             </select>
           </div>
-          <div class="mt-6 flex items-center justify-between">
-            <div class="price-display">₹<span class="dynamic-price">850</span></div>
-            <button class="wa-btn px-4 py-2.5 rounded-lg font-medium focus-ring btn-tap">Customize</button>
+          <div class="mt-4 sm:mt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-0">
+            <div class="price-display text-lg sm:text-xl">₹<span class="dynamic-price">850</span></div>
+            <button class="wa-btn px-4 py-2.5 rounded-lg font-medium focus-ring btn-tap text-sm sm:text-base w-full sm:w-auto">
+              Customize Order
+            </button>
           </div>
         </div>
       </article>
 
       <!-- Embossed Wood Frame -->
-      <article class="paper rounded-2xl overflow-hidden card-hover" data-category="frame" data-product="Embossed Wood Frame">
+      <article class="paper rounded-xl sm:rounded-2xl overflow-hidden card-hover" data-category="frame" data-product="Embossed Wood Frame">
         <div class="relative">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?q=80&w=1200&auto=format&fit=crop" alt="Embossed Wood Frame" class="w-full h-56 object-cover"/>
-          <span class="badge absolute left-4 top-4">Wooden Frame</span>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?q=80&w=1200&auto=format&fit=crop" alt="Embossed Wood Frame" class="w-full h-48 sm:h-56 object-cover"/>
+          <span class="badge absolute left-3 sm:left-4 top-3 sm:top-4">Wooden Frame</span>
         </div>
-        <div class="p-5">
-          <h4 class="product-title">Embossed Wood Frame</h4>
-          <p class="product-description mt-2">Hand-carved wooden frame with intricate floral patterns</p>
-          <div class="flex items-center gap-3 mt-4">
-            <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
-            <input aria-label="quantity" type="number" value="1" min="1" class="w-14 text-center border-2 border-pink-100 rounded-lg py-1.5 font-medium focus-ring"/>
-            <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
-            <select class="ml-auto border-2 border-pink-100 rounded-lg px-3 py-1.5 text-sm font-medium focus-ring" aria-label="Select wood type">
+        <div class="p-4 sm:p-5">
+          <h4 class="product-title text-base sm:text-lg">Embossed Wood Frame</h4>
+          <p class="product-description mt-1 sm:mt-2 text-sm">Hand-carved wooden frame with intricate floral patterns</p>
+          <div class="flex flex-col sm:flex-row sm:items-center gap-3 mt-3 sm:mt-4">
+            <div class="flex items-center gap-2 sm:gap-3">
+              <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
+              <input aria-label="quantity" type="number" value="1" min="1" class="w-12 sm:w-14 text-center input-style py-1.5"/>
+              <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
+            </div>
+            <select class="select-style text-sm sm:text-base py-2" aria-label="Select wood type">
               <option data-price="1200">Teak Wood - ₹1,200</option>
               <option data-price="1400">Rosewood - ₹1,400</option>
               <option data-price="1100">Pine Wood - ₹1,100</option>
               <option data-price="1600">Sheesham Wood - ₹1,600</option>
             </select>
           </div>
-          <div class="mt-6 flex items-center justify-between">
-            <div class="price-display">₹<span class="dynamic-price">1,200</span></div>
-            <button class="wa-btn px-4 py-2.5 rounded-lg font-medium focus-ring btn-tap">Customize</button>
+          <div class="mt-4 sm:mt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-0">
+            <div class="price-display text-lg sm:text-xl">₹<span class="dynamic-price">1,200</span></div>
+            <button class="wa-btn px-4 py-2.5 rounded-lg font-medium focus-ring btn-tap text-sm sm:text-base w-full sm:w-auto">
+              Customize Order
+            </button>
           </div>
         </div>
       </article>
 
       <!-- Mini Photo Frames -->
-      <article class="paper rounded-2xl overflow-hidden card-hover" data-category="frame" data-product="Mini Photo Frame Set">
+      <article class="paper rounded-xl sm:rounded-2xl overflow-hidden card-hover" data-category="frame" data-product="Mini Photo Frame Set">
         <div class="relative">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1513519245088-0e129d1c97a7?q=80&w=1200&auto=format&fit=crop" alt="Mini Photo Frame Set" class="w-full h-56 object-cover"/>
-          <span class="badge absolute left-4 top-4">Set of 3</span>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1513519245088-0e129d1c97a7?q=80&w=1200&auto=format&fit=crop" alt="Mini Photo Frame Set" class="w-full h-48 sm:h-56 object-cover"/>
+          <span class="badge absolute left-3 sm:left-4 top-3 sm:top-4">Set of 3</span>
         </div>
-        <div class="p-5">
-          <h4 class="product-title">Mini Photo Frame Set</h4>
-          <p class="product-description mt-2">Set of 3 small frames perfect for desk or shelf display</p>
-          <div class="flex items-center gap-3 mt-4">
-            <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
-            <input aria-label="quantity" type="number" value="1" min="1" class="w-14 text-center border-2 border-pink-100 rounded-lg py-1.5 font-medium focus-ring"/>
-            <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
-            <select class="ml-auto border-2 border-pink-100 rounded-lg px-3 py-1.5 text-sm font-medium focus-ring" aria-label="Select color">
+        <div class="p-4 sm:p-5">
+          <h4 class="product-title text-base sm:text-lg">Mini Photo Frame Set</h4>
+          <p class="product-description mt-1 sm:mt-2 text-sm">Set of 3 small frames perfect for desk or shelf display</p>
+          <div class="flex flex-col sm:flex-row sm:items-center gap-3 mt-3 sm:mt-4">
+            <div class="flex items-center gap-2 sm:gap-3">
+              <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
+              <input aria-label="quantity" type="number" value="1" min="1" class="w-12 sm:w-14 text-center input-style py-1.5"/>
+              <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
+            </div>
+            <select class="select-style text-sm sm:text-base py-2" aria-label="Select color">
               <option data-price="650">Pastel Set - ₹650</option>
               <option data-price="700">Vibrant Set - ₹700</option>
               <option data-price="750">Natural Wood - ₹750</option>
               <option data-price="800">Metallic Set - ₹800</option>
             </select>
           </div>
-          <div class="mt-6 flex items-center justify-between">
-            <div class="price-display">₹<span class="dynamic-price">650</span></div>
-            <button class="wa-btn px-4 py-2.5 rounded-lg font-medium focus-ring btn-tap">
-              <span class="hidden sm:inline">WhatsApp Order</span>
-              <span class="sm:hidden">Order</span>
+          <div class="mt-4 sm:mt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-0">
+            <div class="price-display text-lg sm:text-xl">₹<span class="dynamic-price">650</span></div>
+            <button class="wa-btn px-4 py-2.5 rounded-lg font-medium focus-ring btn-tap text-sm sm:text-base w-full sm:w-auto">
+              WhatsApp Order
             </button>
           </div>
         </div>
@@ -556,98 +646,107 @@ html{scroll-behavior:smooth}
   </section>
 
   <!-- Slam Books Section -->
-  <section id="slambooks" class="mb-20">
-    <div class="flex items-center gap-5 mb-10">
-      <div class="section-icon">
-        <span class="text-pink-600">📓</span>
+  <section id="slambooks" class="mb-12 sm:mb-20">
+    <div class="flex items-center gap-4 mb-6 sm:mb-10">
+      <div class="section-icon w-12 h-12 sm:w-14 sm:h-14">
+        <span class="text-pink-600 text-xl sm:text-2xl">📓</span>
       </div>
       <div>
-        <h3 class="section-heading">Slam Books</h3>
-        <p class="section-subtitle mt-2">Handmade memory books for special moments</p>
+        <h3 class="section-heading text-2xl sm:text-3xl">Slam Books</h3>
+        <p class="section-subtitle mt-1 sm:mt-2 text-sm sm:text-base">Handmade memory books for special moments</p>
       </div>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
       <!-- Crochet Slam Book -->
-      <article class="paper rounded-2xl overflow-hidden card-hover" data-category="slambook" data-product="Handmade Slam Book">
+      <article class="paper rounded-xl sm:rounded-2xl overflow-hidden card-hover" data-category="slambook" data-product="Handmade Slam Book">
         <div class="relative">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1200&auto=format&fit=crop" alt="Handmade Slam Book" class="w-full h-56 object-cover"/>
-          <span class="badge absolute left-4 top-4">Crochet Cover</span>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1200&auto=format&fit=crop" alt="Handmade Slam Book" class="w-full h-48 sm:h-56 object-cover"/>
+          <span class="badge absolute left-3 sm:left-4 top-3 sm:top-4">Crochet Cover</span>
         </div>
-        <div class="p-5">
-          <h4 class="product-title">Handmade Slam Book</h4>
-          <p class="product-description mt-2">Crochet-covered memory book with 50 premium pages</p>
-          <div class="flex items-center gap-3 mt-4">
-            <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
-            <input aria-label="quantity" type="number" value="1" min="1" class="w-14 text-center border-2 border-pink-100 rounded-lg py-1.5 font-medium focus-ring"/>
-            <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
-            <select class="ml-auto border-2 border-pink-100 rounded-lg px-3 py-1.5 text-sm font-medium focus-ring" aria-label="Select design">
+        <div class="p-4 sm:p-5">
+          <h4 class="product-title text-base sm:text-lg">Handmade Slam Book</h4>
+          <p class="product-description mt-1 sm:mt-2 text-sm">Crochet-covered memory book with 50 premium pages</p>
+          <div class="flex flex-col sm:flex-row sm:items-center gap-3 mt-3 sm:mt-4">
+            <div class="flex items-center gap-2 sm:gap-3">
+              <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
+              <input aria-label="quantity" type="number" value="1" min="1" class="w-12 sm:w-14 text-center input-style py-1.5"/>
+              <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
+            </div>
+            <select class="select-style text-sm sm:text-base py-2" aria-label="Select design">
               <option data-price="650">Floral Pattern - ₹650</option>
               <option data-price="700">Geometric - ₹700</option>
               <option data-price="750">Heart Motif - ₹750</option>
               <option data-price="800">Butterfly Theme - ₹800</option>
             </select>
           </div>
-          <div class="mt-6 flex items-center justify-between">
-            <div class="price-display">₹<span class="dynamic-price">650</span></div>
-            <button class="wa-btn px-4 py-2.5 rounded-lg font-medium focus-ring btn-tap">Personalize</button>
+          <div class="mt-4 sm:mt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-0">
+            <div class="price-display text-lg sm:text-xl">₹<span class="dynamic-price">650</span></div>
+            <button class="wa-btn px-4 py-2.5 rounded-lg font-medium focus-ring btn-tap text-sm sm:text-base w-full sm:w-auto">
+              Personalize Order
+            </button>
           </div>
         </div>
       </article>
 
       <!-- Friendship Slam Book -->
-      <article class="paper rounded-2xl overflow-hidden card-hover" data-category="slambook" data-product="Friendship Slam Book">
+      <article class="paper rounded-xl sm:rounded-2xl overflow-hidden card-hover" data-category="slambook" data-product="Friendship Slam Book">
         <div class="relative">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1200&auto=format&fit=crop" alt="Friendship Slam Book" class="w-full h-56 object-cover"/>
-          <span class="badge absolute left-4 top-4">Friendship Theme</span>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1200&auto=format&fit=crop" alt="Friendship Slam Book" class="w-full h-48 sm:h-56 object-cover"/>
+          <span class="badge absolute left-3 sm:left-4 top-3 sm:top-4">Friendship Theme</span>
         </div>
-        <div class="p-5">
-          <h4 class="product-title">Friendship Slam Book</h4>
-          <p class="product-description mt-2">Special edition with friendship prompts and memories</p>
-          <div class="flex items-center gap-3 mt-4">
-            <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
-            <input aria-label="quantity" type="number" value="1" min="1" class="w-14 text-center border-2 border-pink-100 rounded-lg py-1.5 font-medium focus-ring"/>
-            <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
-            <select class="ml-auto border-2 border-pink-100 rounded-lg px-3 py-1.5 text-sm font-medium focus-ring" aria-label="Select theme">
+        <div class="p-4 sm:p-5">
+          <h4 class="product-title text-base sm:text-lg">Friendship Slam Book</h4>
+          <p class="product-description mt-1 sm:mt-2 text-sm">Special edition with friendship prompts and memories</p>
+          <div class="flex flex-col sm:flex-row sm:items-center gap-3 mt-3 sm:mt-4">
+            <div class="flex items-center gap-2 sm:gap-3">
+              <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
+              <input aria-label="quantity" type="number" value="1" min="1" class="w-12 sm:w-14 text-center input-style py-1.5"/>
+              <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
+            </div>
+            <select class="select-style text-sm sm:text-base py-2" aria-label="Select theme">
               <option data-price="750">Best Friends - ₹750</option>
               <option data-price="800">College Memories - ₹800</option>
               <option data-price="850">Childhood Friends - ₹850</option>
               <option data-price="900">Family Memories - ₹900</option>
             </select>
           </div>
-          <div class="mt-6 flex items-center justify-between">
-            <div class="price-display">₹<span class="dynamic-price">750</span></div>
-            <button class="wa-btn px-4 py-2.5 rounded-lg font-medium focus-ring btn-tap">
-              <span class="hidden sm:inline">WhatsApp Order</span>
-              <span class="sm:hidden">Order</span>
+          <div class="mt-4 sm:mt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-0">
+            <div class="price-display text-lg sm:text-xl">₹<span class="dynamic-price">750</span></div>
+            <button class="wa-btn px-4 py-2.5 rounded-lg font-medium focus-ring btn-tap text-sm sm:text-base w-full sm:w-auto">
+              WhatsApp Order
             </button>
           </div>
         </div>
       </article>
 
       <!-- Premium Leather Slam Book -->
-      <article class="paper rounded-2xl overflow-hidden card-hover" data-category="slambook" data-product="Premium Leather Slam Book">
+      <article class="paper rounded-xl sm:rounded-2xl overflow-hidden card-hover" data-category="slambook" data-product="Premium Leather Slam Book">
         <div class="relative">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1585776245991-cf89dd7fc73a?q=80&w=1200&auto=format&fit=crop" alt="Premium Leather Slam Book" class="w-full h-56 object-cover"/>
-          <span class="badge absolute left-4 top-4">Leather Bound</span>
+          <img loading="lazy" src="https://images.unsplash.com/photo-1585776245991-cf89dd7fc73a?q=80&w=1200&auto=format&fit=crop" alt="Premium Leather Slam Book" class="w-full h-48 sm:h-56 object-cover"/>
+          <span class="badge absolute left-3 sm:left-4 top-3 sm:top-4">Leather Bound</span>
         </div>
-        <div class="p-5">
-          <h4 class="product-title">Premium Leather Slam Book</h4>
-          <p class="product-description mt-2">Luxury leather cover with gold foil embossing</p>
-          <div class="flex items-center gap-3 mt-4">
-            <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
-            <input aria-label="quantity" type="number" value="1" min="1" class="w-14 text-center border-2 border-pink-100 rounded-lg py-1.5 font-medium focus-ring"/>
-            <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
-            <select class="ml-auto border-2 border-pink-100 rounded-lg px-3 py-1.5 text-sm font-medium focus-ring" aria-label="Select leather color">
+        <div class="p-4 sm:p-5">
+          <h4 class="product-title text-base sm:text-lg">Premium Leather Slam Book</h4>
+          <p class="product-description mt-1 sm:mt-2 text-sm">Luxury leather cover with gold foil embossing</p>
+          <div class="flex flex-col sm:flex-row sm:items-center gap-3 mt-3 sm:mt-4">
+            <div class="flex items-center gap-2 sm:gap-3">
+              <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
+              <input aria-label="quantity" type="number" value="1" min="1" class="w-12 sm:w-14 text-center input-style py-1.5"/>
+              <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
+            </div>
+            <select class="select-style text-sm sm:text-base py-2" aria-label="Select leather color">
               <option data-price="1100">Brown Leather - ₹1,100</option>
               <option data-price="1200">Black Leather - ₹1,200</option>
               <option data-price="1300">Burgundy Leather - ₹1,300</option>
               <option data-price="1400">Embossed Leather - ₹1,400</option>
             </select>
           </div>
-          <div class="mt-6 flex items-center justify-between">
-            <div class="price-display">₹<span class="dynamic-price">1,100</span></div>
-            <button class="wa-btn px-4 py-2.5 rounded-lg font-medium focus-ring btn-tap">Customize</button>
+          <div class="mt-4 sm:mt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-0">
+            <div class="price-display text-lg sm:text-xl">₹<span class="dynamic-price">1,100</span></div>
+            <button class="wa-btn px-4 py-2.5 rounded-lg font-medium focus-ring btn-tap text-sm sm:text-base w-full sm:w-auto">
+              Customize Order
+            </button>
           </div>
         </div>
       </article>
@@ -655,25 +754,27 @@ html{scroll-behavior:smooth}
   </section>
 
   <!-- Filters -->
-  <section class="paper rounded-2xl p-5 mb-12">
-    <div class="flex flex-col md:flex-row gap-5 md:items-center md:justify-between">
-      <div class="flex gap-3 flex-wrap" role="tablist" aria-label="Filter products">
-        <button class="pill px-4 py-2.5 rounded-full text-sm font-medium filter-btn focus-ring btn-tap" data-filter="all" aria-selected="true">All Products</button>
-        <button class="pill px-4 py-2.5 rounded-full text-sm font-medium filter-btn focus-ring btn-tap" data-filter="crochet">Crochet</button>
-        <button class="pill px-4 py-2.5 rounded-full text-sm font-medium filter-btn focus-ring btn-tap" data-filter="frame">Frames</button>
-        <button class="pill px-4 py-2.5 rounded-full text-sm font-medium filter-btn focus-ring btn-tap" data-filter="slambook">Slam Books</button>
-        <button class="pill px-4 py-2.5 rounded-full text-sm font-medium filter-btn focus-ring btn-tap" data-filter="pottery">Pottery</button>
-        <button class="pill px-4 py-2.5 rounded-full text-sm font-medium filter-btn focus-ring btn-tap" data-filter="candle">Candles</button>
-      </div>
-      <div class="flex gap-4 w-full md:w-auto">
-        <div class="relative grow md:grow-0 w-full md:w-80">
-          <label for="searchBox" class="sr-only">Search products</label>
-          <input id="searchBox" class="w-full border-2 border-pink-100 rounded-xl pl-12 pr-4 py-3 focus:border-pink-300 focus-ring" placeholder="Search crochet, frames, slam books..."/>
-          <span class="absolute left-4 top-1/2 -translate-y-1/2 text-pink-500 text-lg">🔍</span>
+  <section class="paper rounded-xl sm:rounded-2xl p-4 sm:p-5 mb-8 sm:mb-12">
+    <div class="flex flex-col gap-4 sm:gap-5">
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+        <div class="flex gap-2 sm:gap-3 flex-wrap" role="tablist" aria-label="Filter products">
+          <button class="pill px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium filter-btn focus-ring btn-tap" data-filter="all" aria-selected="true">All Products</button>
+          <button class="pill px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium filter-btn focus-ring btn-tap" data-filter="crochet">Crochet</button>
+          <button class="pill px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium filter-btn focus-ring btn-tap" data-filter="frame">Frames</button>
+          <button class="pill px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium filter-btn focus-ring btn-tap" data-filter="slambook">Slam Books</button>
+          <button class="pill px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium filter-btn focus-ring btn-tap" data-filter="pottery">Pottery</button>
+          <button class="pill px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium filter-btn focus-ring btn-tap" data-filter="candle">Candles</button>
         </div>
-        <div>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
+        <div class="relative w-full">
+          <label for="searchBox" class="sr-only">Search products</label>
+          <input id="searchBox" class="w-full input-style pl-10 sm:pl-12 pr-4 py-2.5 sm:py-3 text-sm sm:text-base" placeholder="Search crochet, frames, slam books..."/>
+          <span class="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 text-pink-500 text-base sm:text-lg">🔍</span>
+        </div>
+        <div class="w-full sm:w-48">
           <label for="sortSelect" class="sr-only">Sort products</label>
-          <select id="sortSelect" class="border-2 border-pink-100 rounded-xl px-4 py-3 focus:border-pink-300 focus-ring font-medium">
+          <select id="sortSelect" class="w-full select-style text-sm sm:text-base py-2.5 sm:py-3">
             <option value="featured">Featured First</option>
             <option value="price-asc">Price: Low to High</option>
             <option value="price-desc">Price: High to Low</option>
@@ -685,91 +786,91 @@ html{scroll-behavior:smooth}
   </section>
 
   <!-- All Products Grid -->
-  <section id="shop" class="mb-20">
-    <div class="flex items-center justify-between mb-10">
-      <h3 class="section-heading">All Handmade Products</h3>
-      <a href="#contact" class="text-pink-600 hover:text-pink-700 font-medium transition-colors flex items-center gap-2">
+  <section id="shop" class="mb-12 sm:mb-20">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 sm:mb-10 gap-3 sm:gap-0">
+      <h3 class="section-heading text-2xl sm:text-3xl">All Handmade Products</h3>
+      <a href="#contact" class="text-pink-600 hover:text-pink-700 font-medium transition-colors flex items-center gap-2 text-sm sm:text-base">
         <span>Request Custom Order</span>
         <span>→</span>
       </a>
     </div>
 
-    <div id="productGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" aria-live="polite">
+    <div id="productGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" aria-live="polite">
       <!-- Original products will be dynamically added here -->
     </div>
   </section>
 
   <!-- About -->
-  <section id="about" class="grid lg:grid-cols-2 gap-10 items-center mb-20">
-    <div class="paper rounded-2xl p-8">
-      <h3 class="section-heading mb-6">About Afreen's Studio</h3>
-      <p class="text-gray-600 text-lg leading-relaxed mb-8">A warm, creative studio specializing in handmade crochet items, pottery, and crafts. We create beautiful crochet flowers, personalized frames, memory slam books, cozy mufflers, and more. Join our monthly workshops to learn crochet basics, pottery, weaving, and candle making.</p>
-      <div class="grid grid-cols-2 gap-6">
-        <div class="flex items-center gap-4 p-4 rounded-xl bg-pink-50">
-          <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-pink-600">✓</div>
-          <span class="font-medium text-gray-800">Crochet Workshops</span>
+  <section id="about" class="grid lg:grid-cols-2 gap-8 sm:gap-10 items-center mb-12 sm:mb-20">
+    <div class="paper rounded-xl sm:rounded-2xl p-5 sm:p-6 lg:p-8">
+      <h3 class="section-heading text-2xl sm:text-3xl mb-4 sm:mb-6">About Afreen's Studio</h3>
+      <p class="text-pink-800 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">A warm, creative studio specializing in handmade crochet items, pottery, and crafts. We create beautiful crochet flowers, personalized frames, memory slam books, cozy mufflers, and more. Join our monthly workshops to learn crochet basics, pottery, weaving, and candle making.</p>
+      <div class="grid grid-cols-2 gap-4 sm:gap-6">
+        <div class="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg sm:rounded-xl bg-pink-50">
+          <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center text-pink-600">✓</div>
+          <span class="font-medium text-pink-900 text-sm sm:text-base">Crochet Workshops</span>
         </div>
-        <div class="flex items-center gap-4 p-4 rounded-xl bg-pink-50">
-          <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-pink-600">✓</div>
-          <span class="font-medium text-gray-800">Custom Orders</span>
+        <div class="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg sm:rounded-xl bg-pink-50">
+          <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center text-pink-600">✓</div>
+          <span class="font-medium text-pink-900 text-sm sm:text-base">Custom Orders</span>
         </div>
-        <div class="flex items-center gap-4 p-4 rounded-xl bg-pink-50">
-          <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-pink-600">✓</div>
-          <span class="font-medium text-gray-800">Personalization</span>
+        <div class="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg sm:rounded-xl bg-pink-50">
+          <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center text-pink-600">✓</div>
+          <span class="font-medium text-pink-900 text-sm sm:text-base">Personalization</span>
         </div>
-        <div class="flex items-center gap-4 p-4 rounded-xl bg-pink-50">
-          <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-pink-600">✓</div>
-          <span class="font-medium text-gray-800">Gift Wrapping</span>
+        <div class="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg sm:rounded-xl bg-pink-50">
+          <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center text-pink-600">✓</div>
+          <span class="font-medium text-pink-900 text-sm sm:text-base">Gift Wrapping</span>
         </div>
       </div>
     </div>
-    <div class="rounded-2xl overflow-hidden">
-      <img loading="lazy" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="Studio interior" class="w-full h-72 object-cover paper"/>
+    <div class="rounded-xl sm:rounded-2xl overflow-hidden mt-6 lg:mt-0">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="Studio interior" class="w-full h-56 sm:h-64 lg:h-72 object-cover paper"/>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="paper rounded-2xl p-8 mb-16">
-    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-10">
+  <section id="contact" class="paper rounded-xl sm:rounded-2xl p-5 sm:p-6 lg:p-8 mb-12 sm:mb-16">
+    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 sm:gap-10">
       <div>
-        <h4 class="section-heading text-2xl mb-6">Get in Touch</h4>
-        <p class="text-gray-600 text-lg mb-8">Have a custom crochet request? Want to order wholesale? Share your ideas with us!</p>
-        <dl class="space-y-6">
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center text-pink-600 mt-1">📧</div>
+        <h4 class="section-heading text-xl sm:text-2xl mb-4 sm:mb-6">Get in Touch</h4>
+        <p class="text-pink-800 text-base sm:text-lg mb-6 sm:mb-8">Have a custom crochet request? Want to order wholesale? Share your ideas with us!</p>
+        <dl class="space-y-4 sm:space-y-6">
+          <div class="flex items-start gap-3 sm:gap-4">
+            <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-pink-100 flex items-center justify-center text-pink-600 mt-0.5 sm:mt-1">📧</div>
             <div>
-              <dt class="font-bold text-gray-800 mb-1">Email</dt>
-              <dd><a href="mailto:hello@afreenhandmade.com" class="text-pink-600 hover:text-pink-700 font-medium">hello@afreenhandmade.com</a></dd>
+              <dt class="font-bold text-pink-900 mb-1 text-sm sm:text-base">Email</dt>
+              <dd><a href="mailto:hello@afreenhandmade.com" class="text-pink-600 hover:text-pink-700 font-medium text-sm sm:text-base">hello@afreenhandmade.com</a></dd>
             </div>
           </div>
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center text-pink-600 mt-1">📍</div>
+          <div class="flex items-start gap-3 sm:gap-4">
+            <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-pink-100 flex items-center justify-center text-pink-600 mt-0.5 sm:mt-1">📍</div>
             <div>
-              <dt class="font-bold text-gray-800 mb-1">Location</dt>
-              <dd class="text-gray-600">Local studio — visit by appointment</dd>
+              <dt class="font-bold text-pink-900 mb-1 text-sm sm:text-base">Location</dt>
+              <dd class="text-pink-800 text-sm sm:text-base">Local studio — visit by appointment</dd>
             </div>
           </div>
-          <div class="flex items-start gap-4">
-            <div class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center text-pink-600 mt-1">✨</div>
+          <div class="flex items-start gap-3 sm:gap-4">
+            <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-pink-100 flex items-center justify-center text-pink-600 mt-0.5 sm:mt-1">✨</div>
             <div>
-              <dt class="font-bold text-gray-800 mb-1">Specialties</dt>
-              <dd class="text-gray-600">Crochet, Frames, Slam Books, Pottery, Candles</dd>
+              <dt class="font-bold text-pink-900 mb-1 text-sm sm:text-base">Specialties</dt>
+              <dd class="text-pink-800 text-sm sm:text-base">Crochet, Frames, Slam Books, Pottery, Candles</dd>
             </div>
           </div>
         </dl>
       </div>
-      <form class="space-y-5" onsubmit="event.preventDefault(); handleContactSubmit();">
+      <form class="space-y-4 sm:space-y-5" onsubmit="event.preventDefault(); handleContactSubmit();">
         <label class="block">
           <span class="sr-only">Name</span>
-          <input class="w-full border-2 border-pink-100 rounded-xl px-4 py-3.5 focus:border-pink-300 focus-ring" placeholder="Your Name" required/>
+          <input class="w-full input-style py-2.5 sm:py-3.5 text-sm sm:text-base" placeholder="Your Name" required/>
         </label>
         <label class="block">
           <span class="sr-only">Email</span>
-          <input class="w-full border-2 border-pink-100 rounded-xl px-4 py-3.5 focus:border-pink-300 focus-ring" placeholder="Email Address" type="email" required/>
+          <input class="w-full input-style py-2.5 sm:py-3.5 text-sm sm:text-base" placeholder="Email Address" type="email" required/>
         </label>
         <label class="block">
           <span class="sr-only">Interest</span>
-          <select class="w-full border-2 border-pink-100 rounded-xl px-4 py-3.5 focus:border-pink-300 focus-ring" required>
+          <select class="w-full select-style py-2.5 sm:py-3.5 text-sm sm:text-base" required>
             <option value="">Select your interest...</option>
             <option>Crochet Items</option>
             <option>Custom Frames</option>
@@ -783,10 +884,10 @@ html{scroll-behavior:smooth}
         </label>
         <label class="block">
           <span class="sr-only">Message</span>
-          <textarea class="w-full border-2 border-pink-100 rounded-xl px-4 py-3.5 focus:border-pink-300 focus-ring" rows="4" placeholder="Your message..." required></textarea>
+          <textarea class="w-full textarea-style py-2.5 sm:py-3.5 text-sm sm:text-base" rows="4" placeholder="Your message..." required></textarea>
         </label>
         <div class="flex justify-end">
-          <button class="px-6 py-3.5 bg-gradient-to-br from-pink-500 to-rose-400 text-white rounded-xl focus-ring btn-tap font-medium text-lg transition-all" type="submit">
+          <button class="px-5 sm:px-6 py-3 sm:py-3.5 bg-gradient-to-br from-pink-500 to-rose-400 text-white rounded-xl focus-ring btn-tap font-medium text-base sm:text-lg transition-all w-full sm:w-auto" type="submit">
             Send Message
           </button>
         </div>
@@ -794,9 +895,9 @@ html{scroll-behavior:smooth}
     </div>
   </section>
 
-  <footer class="mt-16 text-center">
-    <p class="text-gray-600 text-lg mb-2">© <span class="font-bold text-gray-800">Afreen Handmade Goods</span> — Handmade Crochet, Pottery & Crafts.</p>
-    <p class="text-gray-500">Follow us on <a href="#" class="text-pink-600 hover:text-pink-700 font-medium transition-colors">Instagram</a> for latest creations and updates.</p>
+  <footer class="mt-12 sm:mt-16 text-center">
+    <p class="text-pink-800 text-base sm:text-lg mb-2">© <span class="font-bold text-pink-900">Afreen Handmade Goods</span> — Handmade Crochet, Pottery & Crafts.</p>
+    <p class="text-pink-700 text-sm sm:text-base">Follow us on <a href="#" class="text-pink-600 hover:text-pink-700 font-medium transition-colors">Instagram</a> for latest creations and updates.</p>
   </footer>
 </main>
 
@@ -1026,7 +1127,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // Function to create product card
   function createProductCard(productData) {
     const article = document.createElement('article');
-    article.className = 'paper rounded-2xl overflow-hidden card-hover craft-card';
+    article.className = 'paper rounded-xl sm:rounded-2xl overflow-hidden card-hover craft-card';
     article.setAttribute('data-category', productData.category);
     article.setAttribute('data-product', productData.product);
     
@@ -1034,27 +1135,28 @@ window.addEventListener('DOMContentLoaded', () => {
     
     article.innerHTML = `
       <div class="relative">
-        <img loading="lazy" src="${productData.image}" alt="${productData.product}" class="w-full h-56 object-cover"/>
-        <span class="badge absolute left-4 top-4">${productData.badge}</span>
+        <img loading="lazy" src="${productData.image}" alt="${productData.product}" class="w-full h-48 sm:h-56 object-cover"/>
+        <span class="badge absolute left-3 sm:left-4 top-3 sm:top-4">${productData.badge}</span>
       </div>
-      <div class="p-5">
-        <h4 class="product-title">${productData.product}</h4>
-        <p class="product-description mt-2">${productData.description}</p>
-        <div class="flex items-center gap-3 mt-4">
-          <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
-          <input aria-label="quantity" type="number" value="1" min="1" class="w-14 text-center border-2 border-pink-100 rounded-lg py-1.5 font-medium focus-ring"/>
-          <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
-          <select class="ml-auto border-2 border-pink-100 rounded-lg px-3 py-1.5 text-sm font-medium focus-ring" aria-label="Select variant">
+      <div class="p-4 sm:p-5">
+        <h4 class="product-title text-base sm:text-lg">${productData.product}</h4>
+        <p class="product-description mt-1 sm:mt-2 text-sm">${productData.description}</p>
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3 mt-3 sm:mt-4">
+          <div class="flex items-center gap-2 sm:gap-3">
+            <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
+            <input aria-label="quantity" type="number" value="1" min="1" class="w-12 sm:w-14 text-center input-style py-1.5"/>
+            <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
+          </div>
+          <select class="select-style text-sm sm:text-base py-2" aria-label="Select variant">
             ${productData.variants.map(v => 
               `<option value="${v.label}" data-price="${v.price}">${v.label} - ₹${parseInt(v.price).toLocaleString('en-IN')}</option>`
             ).join('')}
           </select>
         </div>
-        <div class="mt-6 flex items-center justify-between">
-          <div class="price-display">₹<span class="dynamic-price">${parseInt(basePrice).toLocaleString('en-IN')}</span></div>
-          <button class="wa-btn px-4 py-2.5 rounded-lg font-medium focus-ring btn-tap">
-            <span class="hidden sm:inline">WhatsApp Order</span>
-            <span class="sm:hidden">Order</span>
+        <div class="mt-4 sm:mt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-0">
+          <div class="price-display text-lg sm:text-xl">₹<span class="dynamic-price">${parseInt(basePrice).toLocaleString('en-IN')}</span></div>
+          <button class="wa-btn px-4 py-2.5 rounded-lg font-medium focus-ring btn-tap text-sm sm:text-base w-full sm:w-auto">
+            WhatsApp Order
           </button>
         </div>
       </div>
