@@ -921,7 +921,7 @@ function handleContactSubmit() {
   const interest = document.querySelector('#contact select').value;
   const message = document.querySelector('#contact textarea').value;
   
-  const whatsappMessage = `New Contact Form Submission:%0A%0AName: ${name}%0AEmail: ${email}%0AInterest: ${interest}%0AMessage: ${message}`;
+  const whatsappMessage = `New Contact Form Submission  Name: ${name} Email: ${email} Interest: ${interest} Message: ${message}`;
   
   window.open(generateWhatsAppLink(whatsappMessage), '_blank');
   
@@ -1226,7 +1226,7 @@ window.addEventListener('DOMContentLoaded', () => {
       const variant = variantSelect ? variantSelect.options[variantSelect.selectedIndex].text : '';
       const price = priceDisplay ? priceDisplay.textContent : '';
       
-      const message = `Hi Afreen! I'm interested in ordering:%0A%0AProduct: ${productName}%0ACategory: ${category}%0AQuantity: ${quantity}%0AVariant: ${variant}%0APrice: ₹${price}%0A%0APlease let me know about availability and payment options.`;
+      const message = `Hi Afreen! I'm interested in ordering: A Product: ${productName} Category: ${category} Quantity: ${quantity} Variant: ${variant} Price: ₹${price}  Please let me know about availability and payment options.`;
       
       window.open(generateWhatsAppLink(message), '_blank');
     });
