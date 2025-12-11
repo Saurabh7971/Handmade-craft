@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Afreen — Handmade Goods & Crochet</title>
+<title>Afreen — Handmade Crochet & Crafts</title>
 <meta name="description" content="Afreen Handmade Goods — Crochet flowers, custom frames, slam books, mufflers, pottery, woven items, candles, and gifts. Shop bestsellers and explore workshops."/>
 <meta name="theme-color" content="#ec4899"/>
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
@@ -51,7 +51,12 @@ html{scroll-behavior:smooth}
 .btn-tap{transform:translateY(0);transition:transform .06s ease}.btn-tap:active{transform:translateY(1px)}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .crochet-bg{background:linear-gradient(135deg,#fdf2f8 0%,#fce7f3 50%,#fbcfe8 100%)}
+.frame-bg{background:linear-gradient(135deg,#eff6ff 0%,#dbeafe 50%,#bfdbfe 100%)}
+.slambook-bg{background:linear-gradient(135deg,#f0fdf4 0%,#dcfce7 50%,#bbf7d0 100%)}
 .crochet-border{border-color:rgba(244,114,182,.2)}
+.frame-border{border-color:rgba(96,165,250,.2)}
+.slambook-border{border-color:rgba(74,222,128,.2)}
+.section-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem}
 </style>
 <script defer src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
 <script defer src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
@@ -82,10 +87,11 @@ html{scroll-behavior:smooth}
 
     <!-- Desktop nav -->
     <nav class="hidden md:flex items-center gap-6 text-sm" aria-label="Primary">
-      <a href="#shop" class="text-slate-700 hover:text-pink-600">Shop</a>
+      <a href="#shop" class="text-slate-700 hover:text-pink-600">All Products</a>
       <a href="#crochet" class="text-slate-700 hover:text-pink-600">Crochet</a>
+      <a href="#frames" class="text-slate-700 hover:text-pink-600">Frames</a>
+      <a href="#slambooks" class="text-slate-700 hover:text-pink-600">Slam Books</a>
       <a href="#about" class="text-slate-700 hover:text-pink-600">About</a>
-      <a href="#contact" class="text-slate-700 hover:text-pink-600">Workshops</a>
       <button class="ml-2 px-4 py-2 bg-gradient-to-br from-pink-500 to-rose-400 text-white rounded-full shadow-sm hover:from-pink-600 hover:to-rose-500 focus-ring btn-tap">Visit Store</button>
     </nav>
 
@@ -112,10 +118,11 @@ html{scroll-behavior:smooth}
       </button>
     </div>
     <nav class="p-4 flex flex-col gap-3" aria-label="Mobile">
-      <a class="py-2 border-b" href="#shop">Shop</a>
+      <a class="py-2 border-b" href="#shop">All Products</a>
       <a class="py-2 border-b" href="#crochet">Crochet</a>
+      <a class="py-2 border-b" href="#frames">Frames</a>
+      <a class="py-2 border-b" href="#slambooks">Slam Books</a>
       <a class="py-2 border-b" href="#about">About</a>
-      <a class="py-2 border-b" href="#contact">Workshops</a>
       <a class="mt-3 inline-flex items-center justify-center px-4 py-2 bg-gradient-to-br from-pink-500 to-rose-400 text-white rounded-lg focus-ring"
          href="#shop">Visit Store</a>
     </nav>
@@ -125,13 +132,13 @@ html{scroll-behavior:smooth}
 <!-- Main -->
 <main class="max-w-6xl mx-auto px-6 py-12">
   <!-- Hero -->
-  <section class="grid lg:grid-cols-2 gap-8 items-center">
+  <section class="grid lg:grid-cols-2 gap-8 items-center mb-16">
     <div class="hero-glass rounded-2xl p-5 sm:p-6">
       <h2 class="hand text-4xl sm:text-5xl text-pink-600 leading-tight accent-underline headline-shadow">Handmade Crochet & Crafts by Afreen</h2>
       <p class="mt-4 muted max-w-xl">Specializing in crochet flowers, custom frames, slam books, mufflers, pottery, and woven goods. Each piece is lovingly handmade with attention to detail.</p>
       <div class="mt-6 flex gap-3">
         <a href="#crochet" class="inline-flex items-center gap-2 px-5 py-3 bg-gradient-to-br from-pink-500 to-rose-400 text-white rounded-lg shadow hover:from-pink-600 hover:to-rose-500 focus-ring btn-tap">Shop Crochet</a>
-        <a href="#workshops" class="inline-flex items-center gap-2 px-5 py-3 border border-pink-100 rounded-lg text-pink-600 focus-ring btn-tap">Book a Workshop</a>
+        <a href="#frames" class="inline-flex items-center gap-2 px-5 py-3 border border-pink-100 rounded-lg text-pink-600 focus-ring btn-tap">Browse Frames</a>
       </div>
       <ul class="mt-6 grid grid-cols-2 gap-3 text-sm muted">
         <li class="flex items-center gap-3"><span class="w-8 h-8 rounded-full bg-rose-50 flex items-center justify-center text-rose-600">🌺</span>Crochet Flowers</li>
@@ -155,145 +162,25 @@ html{scroll-behavior:smooth}
     </div>
   </section>
 
-  <!-- New Crochet Section -->
-  <section id="crochet" class="mt-12 crochet-bg rounded-2xl p-6 border-2 crochet-border">
-    <div class="flex items-center justify-between mb-6">
+  <!-- Crochet Section -->
+  <section id="crochet" class="mb-16">
+    <div class="flex items-center gap-4 mb-8">
+      <div class="section-icon crochet-bg">
+        <span class="text-pink-600">🧶</span>
+      </div>
       <div>
-        <h3 class="text-2xl font-semibold text-pink-700">✨ Crochet Collection</h3>
-        <p class="mt-1 text-pink-600/80">Handmade crochet flowers, frames, slam books & mufflers</p>
+        <h3 class="text-2xl font-semibold text-pink-700">Crochet Collection</h3>
+        <p class="mt-1 text-pink-600/80">Handmade crochet flowers, accessories, and decor</p>
       </div>
-      <span class="px-3 py-1 bg-white/80 rounded-full text-sm font-medium text-pink-700">New Arrivals</span>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       <!-- Crochet Flower Bouquet -->
-      <article class="paper rounded-2xl overflow-hidden hover:shadow-lg transition" data-category="crochet" data-product="Crochet Flower Bouquet" data-price="₹1,200">
-        <div class="relative">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1605651201478-b7c60e3d7453?q=80&w=1200&auto=format&fit=crop" alt="Crochet Flower Bouquet" class="w-full h-48 object-cover"/>
-          <span class="badge absolute left-3 top-3" style="background:#fdf2f8;color:#be185d">Crochet Flower</span>
-        </div>
-        <div class="p-4">
-          <h4 class="font-medium">Crochet Flower Bouquet</h4>
-          <p class="text-sm muted mt-1">Rose, Daisy & Sunflower set</p>
-          <div class="flex items-center gap-2 mt-3">
-            <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
-            <input aria-label="quantity" type="number" value="1" min="1" class="w-12 text-center border rounded-md py-1"/>
-            <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
-          </div>
-          <div class="mt-4 flex items-center justify-between">
-            <div class="text-lg font-semibold">₹1,200</div>
-            <button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring btn-tap">WhatsApp</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- Custom Crochet Frame -->
-      <article class="paper rounded-2xl overflow-hidden hover:shadow-lg transition" data-category="crochet" data-product="Custom Crochet Frame" data-price="₹850">
-        <div class="relative">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=1200&auto=format&fit=crop" alt="Custom Crochet Frame" class="w-full h-48 object-cover"/>
-          <span class="badge absolute left-3 top-3" style="background:#fdf2f8;color:#be185d">Custom Frame</span>
-        </div>
-        <div class="p-4">
-          <h4 class="font-medium">Custom Crochet Frame</h4>
-          <p class="text-sm muted mt-1">Personalized photo frame with crochet border</p>
-          <div class="flex items-center gap-2 mt-3">
-            <select class="w-full border rounded-md px-2 py-1 text-sm" aria-label="Select size">
-              <option>4x6 inch</option><option>5x7 inch</option><option>8x10 inch</option>
-            </select>
-          </div>
-          <div class="mt-4 flex items-center justify-between">
-            <div class="text-lg font-semibold">₹850</div>
-            <button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring btn-tap">Customize</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- Handmade Slam Book -->
-      <article class="paper rounded-2xl overflow-hidden hover:shadow-lg transition" data-category="crochet" data-product="Handmade Slam Book" data-price="₹650">
-        <div class="relative">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1200&auto=format&fit=crop" alt="Handmade Slam Book" class="w-full h-48 object-cover"/>
-          <span class="badge absolute left-3 top-3" style="background:#fdf2f8;color:#be185d">Slam Book</span>
-        </div>
-        <div class="p-4">
-          <h4 class="font-medium">Handmade Slam Book</h4>
-          <p class="text-sm muted mt-1">Crochet-covered memory book</p>
-          <div class="flex items-center gap-2 mt-3">
-            <select class="w-full border rounded-md px-2 py-1 text-sm" aria-label="Select design">
-              <option>Floral Pattern</option><option>Geometric</option><option>Heart Motif</option>
-            </select>
-          </div>
-          <div class="mt-4 flex items-center justify-between">
-            <div class="text-lg font-semibold">₹650</div>
-            <button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring btn-tap">Personalize</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- Crochet Muffler -->
-      <article class="paper rounded-2xl overflow-hidden hover:shadow-lg transition" data-category="crochet" data-product="Crochet Muffler" data-price="₹1,100">
-        <div class="relative">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1200&auto=format&fit=crop" alt="Crochet Muffler" class="w-full h-48 object-cover"/>
-          <span class="badge absolute left-3 top-3" style="background:#fdf2f8;color:#be185d">Muffler</span>
-        </div>
-        <div class="p-4">
-          <h4 class="font-medium">Crochet Muffler</h4>
-          <p class="text-sm muted mt-1">Warm, soft & stylish winter accessory</p>
-          <div class="flex items-center gap-2 mt-3">
-            <select class="w-full border rounded-md px-2 py-1 text-sm" aria-label="Select color">
-              <option>Cream</option><option>Rose Pink</option><option>Sky Blue</option><option>Mint Green</option>
-            </select>
-          </div>
-          <div class="mt-4 flex items-center justify-between">
-            <div class="text-lg font-semibold">₹1,100</div>
-            <button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring btn-tap">WhatsApp</button>
-          </div>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- Filters -->
-  <section class="mt-12 paper rounded-2xl p-4">
-    <div class="flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
-      <div class="flex gap-2 flex-wrap" role="tablist" aria-label="Filter products">
-        <button class="pill px-3 py-1.5 rounded-full text-sm filter-btn focus-ring btn-tap" data-filter="all" aria-selected="true">All</button>
-        <button class="pill px-3 py-1.5 rounded-full text-sm filter-btn focus-ring btn-tap" data-filter="crochet">Crochet</button>
-        <button class="pill px-3 py-1.5 rounded-full text-sm filter-btn focus-ring btn-tap" data-filter="pottery">Pottery</button>
-        <button class="pill px-3 py-1.5 rounded-full text-sm filter-btn focus-ring btn-tap" data-filter="knit">Knit</button>
-        <button class="pill px-3 py-1.5 rounded-full text-sm filter-btn focus-ring btn-tap" data-filter="candle">Candles</button>
-        <button class="pill px-3 py-1.5 rounded-full text-sm filter-btn focus-ring btn-tap" data-filter="weave">Weaving</button>
-        <button class="pill px-3 py-1.5 rounded-full text-sm filter-btn focus-ring btn-tap" data-filter="gift">Gifts</button>
-      </div>
-      <div class="flex gap-3 w-full md:w-auto">
-        <div class="relative grow md:grow-0 w-full md:w-72">
-          <label for="searchBox" class="sr-only">Search products</label>
-          <input id="searchBox" class="w-full border rounded-xl pl-10 pr-3 py-2 focus-ring" placeholder="Search crochet, pottery, gifts..."/>
-          <span class="absolute left-3 top-1/2 -translate-y-1/2 text-pink-500">🔎</span>
-        </div>
-        <div>
-          <label for="sortSelect" class="sr-only">Sort products</label>
-          <select id="sortSelect" class="border rounded-xl px-3 py-2 focus-ring">
-            <option value="featured">Sort: Featured</option>
-            <option value="price-asc">Price: Low to High</option>
-            <option value="price-desc">Price: High to Low</option>
-            <option value="name-asc">Name: A–Z</option>
-          </select>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Shop -->
-  <section id="shop" class="mt-8">
-    <div class="flex items-center justify-between">
-      <h3 class="text-2xl font-semibold">Featured Crafts</h3>
-      <a href="#" class="text-sm text-pink-600 hover:underline">View all</a>
-    </div>
-
-    <div id="productGrid" class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6" aria-live="polite">
-      <!-- Crochet products added to main grid -->
       <article class="paper rounded-2xl overflow-hidden hover:shadow-lg transition craft-card" data-category="crochet" data-product="Crochet Flower Bouquet" data-price="₹1,200">
-        <div class="relative"><img loading="lazy" src="https://images.unsplash.com/photo-1605651201478-b7c60e3d7453?q=80&w=1200&auto=format&fit=crop" alt="Crochet Flower Bouquet" class="w-full h-48 sm:h-52 object-cover"/><span class="badge absolute left-3 top-3">Crochet</span></div>
+        <div class="relative">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1605651201478-b7c60e3d7453?q=80&w=1200&auto=format&fit=crop" alt="Crochet Flower Bouquet" class="w-full h-48 sm:h-52 object-cover"/>
+          <span class="badge absolute left-3 top-3">Crochet Flower</span>
+        </div>
         <div class="p-4">
           <h4 class="font-medium">Crochet Flower Bouquet</h4>
           <p class="text-sm muted mt-1">Rose, Daisy & Sunflower set</p>
@@ -312,7 +199,260 @@ html{scroll-behavior:smooth}
         </div>
       </article>
 
-      <!-- Original products with new crochet products interspersed -->
+      <!-- Crochet Muffler -->
+      <article class="paper rounded-2xl overflow-hidden hover:shadow-lg transition craft-card" data-category="crochet" data-product="Crochet Muffler" data-price="₹1,100">
+        <div class="relative">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1200&auto=format&fit=crop" alt="Crochet Muffler" class="w-full h-48 sm:h-52 object-cover"/>
+          <span class="badge absolute left-3 top-3">Muffler</span>
+        </div>
+        <div class="p-4">
+          <h4 class="font-medium">Crochet Muffler</h4>
+          <p class="text-sm muted mt-1">Warm, soft & stylish winter accessory</p>
+          <div class="flex items-center gap-2 mt-3">
+            <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
+            <input aria-label="quantity" type="number" value="1" min="1" class="w-12 text-center border rounded-md py-1"/>
+            <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
+            <select class="ml-auto border rounded-md px-2 py-1 text-sm" aria-label="Select color">
+              <option>Cream</option><option>Rose Pink</option><option>Sky Blue</option><option>Mint Green</option>
+            </select>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <div class="text-lg font-semibold">₹1,100</div>
+            <button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring btn-tap">WhatsApp</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Crochet Coasters -->
+      <article class="paper rounded-2xl overflow-hidden hover:shadow-lg transition craft-card" data-category="crochet" data-product="Crochet Coaster Set" data-price="₹450">
+        <div class="relative">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop" alt="Crochet Coaster Set" class="w-full h-48 sm:h-52 object-cover"/>
+          <span class="badge absolute left-3 top-3">Home Decor</span>
+        </div>
+        <div class="p-4">
+          <h4 class="font-medium">Crochet Coaster Set</h4>
+          <p class="text-sm muted mt-1">Set of 4 colorful coasters</p>
+          <div class="flex items-center gap-2 mt-3">
+            <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
+            <input aria-label="quantity" type="number" value="1" min="1" class="w-12 text-center border rounded-md py-1"/>
+            <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
+            <select class="ml-auto border rounded-md px-2 py-1 text-sm" aria-label="Select design">
+              <option>Floral Set</option><option>Geometric Set</option><option>Rainbow Set</option>
+            </select>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <div class="text-lg font-semibold">₹450</div>
+            <button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring btn-tap">WhatsApp</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Custom Frames Section -->
+  <section id="frames" class="mb-16">
+    <div class="flex items-center gap-4 mb-8">
+      <div class="section-icon frame-bg">
+        <span class="text-blue-600">🖼️</span>
+      </div>
+      <div>
+        <h3 class="text-2xl font-semibold text-blue-700">Custom Frames</h3>
+        <p class="mt-1 text-blue-600/80">Personalized photo frames with handmade details</p>
+      </div>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Crochet Border Frame -->
+      <article class="paper rounded-2xl overflow-hidden hover:shadow-lg transition craft-card" data-category="frame" data-product="Custom Crochet Frame" data-price="₹850">
+        <div class="relative">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=1200&auto=format&fit=crop" alt="Custom Crochet Frame" class="w-full h-48 sm:h-52 object-cover"/>
+          <span class="badge absolute left-3 top-3">Crochet Border</span>
+        </div>
+        <div class="p-4">
+          <h4 class="font-medium">Custom Crochet Frame</h4>
+          <p class="text-sm muted mt-1">Personalized photo frame with crochet border</p>
+          <div class="flex items-center gap-2 mt-3">
+            <select class="w-full border rounded-md px-2 py-1 text-sm" aria-label="Select size">
+              <option>4x6 inch</option><option>5x7 inch</option><option>8x10 inch</option>
+            </select>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <div class="text-lg font-semibold">₹850</div>
+            <button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring btn-tap">Customize</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Embossed Wood Frame -->
+      <article class="paper rounded-2xl overflow-hidden hover:shadow-lg transition craft-card" data-category="frame" data-product="Embossed Wood Frame" data-price="₹1,200">
+        <div class="relative">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?q=80&w=1200&auto=format&fit=crop" alt="Embossed Wood Frame" class="w-full h-48 sm:h-52 object-cover"/>
+          <span class="badge absolute left-3 top-3">Wooden Frame</span>
+        </div>
+        <div class="p-4">
+          <h4 class="font-medium">Embossed Wood Frame</h4>
+          <p class="text-sm muted mt-1">Hand-carved wooden frame with floral patterns</p>
+          <div class="flex items-center gap-2 mt-3">
+            <select class="w-full border rounded-md px-2 py-1 text-sm" aria-label="Select wood type">
+              <option>Teak Wood</option><option>Rosewood</option><option>Pine Wood</option>
+            </select>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <div class="text-lg font-semibold">₹1,200</div>
+            <button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring btn-tap">Customize</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Mini Photo Frames -->
+      <article class="paper rounded-2xl overflow-hidden hover:shadow-lg transition craft-card" data-category="frame" data-product="Mini Photo Frame Set" data-price="₹650">
+        <div class="relative">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1513519245088-0e129d1c97a7?q=80&w=1200&auto=format&fit=crop" alt="Mini Photo Frame Set" class="w-full h-48 sm:h-52 object-cover"/>
+          <span class="badge absolute left-3 top-3">Set of 3</span>
+        </div>
+        <div class="p-4">
+          <h4 class="font-medium">Mini Photo Frame Set</h4>
+          <p class="text-sm muted mt-1">Set of 3 small frames for desk or shelf</p>
+          <div class="flex items-center gap-2 mt-3">
+            <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
+            <input aria-label="quantity" type="number" value="1" min="1" class="w-12 text-center border rounded-md py-1"/>
+            <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
+            <select class="ml-auto border rounded-md px-2 py-1 text-sm" aria-label="Select color">
+              <option>Pastel Set</option><option>Vibrant Set</option><option>Natural Wood</option>
+            </select>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <div class="text-lg font-semibold">₹650</div>
+            <button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring btn-tap">WhatsApp</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Slam Books Section -->
+  <section id="slambooks" class="mb-16">
+    <div class="flex items-center gap-4 mb-8">
+      <div class="section-icon slambook-bg">
+        <span class="text-green-600">📓</span>
+      </div>
+      <div>
+        <h3 class="text-2xl font-semibold text-green-700">Slam Books</h3>
+        <p class="mt-1 text-green-600/80">Handmade memory books for special moments</p>
+      </div>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Crochet Slam Book -->
+      <article class="paper rounded-2xl overflow-hidden hover:shadow-lg transition craft-card" data-category="slambook" data-product="Handmade Slam Book" data-price="₹650">
+        <div class="relative">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1200&auto=format&fit=crop" alt="Handmade Slam Book" class="w-full h-48 sm:h-52 object-cover"/>
+          <span class="badge absolute left-3 top-3">Crochet Cover</span>
+        </div>
+        <div class="p-4">
+          <h4 class="font-medium">Handmade Slam Book</h4>
+          <p class="text-sm muted mt-1">Crochet-covered memory book with 50 pages</p>
+          <div class="flex items-center gap-2 mt-3">
+            <select class="w-full border rounded-md px-2 py-1 text-sm" aria-label="Select design">
+              <option>Floral Pattern</option><option>Geometric</option><option>Heart Motif</option>
+            </select>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <div class="text-lg font-semibold">₹650</div>
+            <button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring btn-tap">Personalize</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Friendship Slam Book -->
+      <article class="paper rounded-2xl overflow-hidden hover:shadow-lg transition craft-card" data-category="slambook" data-product="Friendship Slam Book" data-price="₹750">
+        <div class="relative">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1200&auto=format&fit=crop" alt="Friendship Slam Book" class="w-full h-48 sm:h-52 object-cover"/>
+          <span class="badge absolute left-3 top-3">Friendship Theme</span>
+        </div>
+        <div class="p-4">
+          <h4 class="font-medium">Friendship Slam Book</h4>
+          <p class="text-sm muted mt-1">Special edition for friends with prompts</p>
+          <div class="flex items-center gap-2 mt-3">
+            <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
+            <input aria-label="quantity" type="number" value="1" min="1" class="w-12 text-center border rounded-md py-1"/>
+            <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
+            <select class="ml-auto border rounded-md px-2 py-1 text-sm" aria-label="Select theme">
+              <option>Best Friends</option><option>College Memories</option><option>Childhood Friends</option>
+            </select>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <div class="text-lg font-semibold">₹750</div>
+            <button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring btn-tap">WhatsApp</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Premium Leather Slam Book -->
+      <article class="paper rounded-2xl overflow-hidden hover:shadow-lg transition craft-card" data-category="slambook" data-product="Premium Leather Slam Book" data-price="₹1,100">
+        <div class="relative">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1585776245991-cf89dd7fc73a?q=80&w=1200&auto=format&fit=crop" alt="Premium Leather Slam Book" class="w-full h-48 sm:h-52 object-cover"/>
+          <span class="badge absolute left-3 top-3">Leather Bound</span>
+        </div>
+        <div class="p-4">
+          <h4 class="font-medium">Premium Leather Slam Book</h4>
+          <p class="text-sm muted mt-1">Luxury leather cover with gold embossing</p>
+          <div class="flex items-center gap-2 mt-3">
+            <select class="w-full border rounded-md px-2 py-1 text-sm" aria-label="Select leather color">
+              <option>Brown Leather</option><option>Black Leather</option><option>Burgundy Leather</option>
+            </select>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <div class="text-lg font-semibold">₹1,100</div>
+            <button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring btn-tap">Customize</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Filters -->
+  <section class="mt-12 paper rounded-2xl p-4 mb-12">
+    <div class="flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
+      <div class="flex gap-2 flex-wrap" role="tablist" aria-label="Filter products">
+        <button class="pill px-3 py-1.5 rounded-full text-sm filter-btn focus-ring btn-tap" data-filter="all" aria-selected="true">All</button>
+        <button class="pill px-3 py-1.5 rounded-full text-sm filter-btn focus-ring btn-tap" data-filter="crochet">Crochet</button>
+        <button class="pill px-3 py-1.5 rounded-full text-sm filter-btn focus-ring btn-tap" data-filter="frame">Frames</button>
+        <button class="pill px-3 py-1.5 rounded-full text-sm filter-btn focus-ring btn-tap" data-filter="slambook">Slam Books</button>
+        <button class="pill px-3 py-1.5 rounded-full text-sm filter-btn focus-ring btn-tap" data-filter="pottery">Pottery</button>
+        <button class="pill px-3 py-1.5 rounded-full text-sm filter-btn focus-ring btn-tap" data-filter="knit">Knit</button>
+        <button class="pill px-3 py-1.5 rounded-full text-sm filter-btn focus-ring btn-tap" data-filter="candle">Candles</button>
+        <button class="pill px-3 py-1.5 rounded-full text-sm filter-btn focus-ring btn-tap" data-filter="weave">Weaving</button>
+        <button class="pill px-3 py-1.5 rounded-full text-sm filter-btn focus-ring btn-tap" data-filter="gift">Gifts</button>
+      </div>
+      <div class="flex gap-3 w-full md:w-auto">
+        <div class="relative grow md:grow-0 w-full md:w-72">
+          <label for="searchBox" class="sr-only">Search products</label>
+          <input id="searchBox" class="w-full border rounded-xl pl-10 pr-3 py-2 focus-ring" placeholder="Search crochet, frames, slam books..."/>
+          <span class="absolute left-3 top-1/2 -translate-y-1/2 text-pink-500">🔎</span>
+        </div>
+        <div>
+          <label for="sortSelect" class="sr-only">Sort products</label>
+          <select id="sortSelect" class="border rounded-xl px-3 py-2 focus-ring">
+            <option value="featured">Sort: Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="name-asc">Name: A–Z</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- All Products Grid -->
+  <section id="shop" class="mb-16">
+    <div class="flex items-center justify-between mb-8">
+      <h3 class="text-2xl font-semibold">All Handmade Products</h3>
+      <a href="#contact" class="text-sm text-pink-600 hover:underline">Request Custom Order</a>
+    </div>
+
+    <div id="productGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" aria-live="polite">
+      <!-- Original products -->
       <article class="paper rounded-2xl overflow-hidden hover:shadow-lg transition craft-card" data-category="pottery" data-product="Glazed Ceramic Mug" data-price="₹1,250">
         <div class="relative"><img loading="lazy" src="./IMAGES/about3.jpeg" alt="Glazed Ceramic Mug" class="w-full h-48 sm:h-52 object-cover"/><span class="badge absolute left-3 top-3">Pottery</span></div>
         <div class="p-4">
@@ -329,26 +469,6 @@ html{scroll-behavior:smooth}
           <div class="mt-4 flex items-center justify-between">
             <div class="text-lg font-semibold">₹1,250</div>
             <button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring btn-tap">WhatsApp</button>
-          </div>
-        </div>
-      </article>
-
-      <article class="paper rounded-2xl overflow-hidden hover:shadow-lg transition craft-card" data-category="crochet" data-product="Custom Crochet Frame" data-price="₹850">
-        <div class="relative"><img loading="lazy" src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=1200&auto=format&fit=crop" alt="Custom Crochet Frame" class="w-full h-48 sm:h-52 object-cover"/><span class="badge absolute left-3 top-3">Crochet</span></div>
-        <div class="p-4">
-          <h4 class="font-medium">Custom Crochet Frame</h4>
-          <p class="text-sm muted mt-1">Personalized photo frame</p>
-          <div class="flex items-center gap-2 mt-3">
-            <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
-            <input aria-label="quantity" type="number" value="1" min="1" class="w-12 text-center border rounded-md py-1"/>
-            <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
-            <select class="ml-auto border rounded-md px-2 py-1 text-sm" aria-label="Select size">
-              <option>4x6 inch</option><option>5x7 inch</option><option>8x10 inch</option>
-            </select>
-          </div>
-          <div class="mt-4 flex items-center justify-between">
-            <div class="text-lg font-semibold">₹850</div>
-            <button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring btn-tap">Customize</button>
           </div>
         </div>
       </article>
@@ -373,26 +493,6 @@ html{scroll-behavior:smooth}
         </div>
       </article>
 
-      <article class="paper rounded-2xl overflow-hidden hover:shadow-lg transition craft-card" data-category="crochet" data-product="Handmade Slam Book" data-price="₹650">
-        <div class="relative"><img loading="lazy" src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1200&auto=format&fit=crop" alt="Handmade Slam Book" class="w-full h-48 sm:h-52 object-cover"/><span class="badge absolute left-3 top-3">Crochet</span></div>
-        <div class="p-4">
-          <h4 class="font-medium">Handmade Slam Book</h4>
-          <p class="text-sm muted mt-1">Crochet-covered memory book</p>
-          <div class="flex items-center gap-2 mt-3">
-            <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
-            <input aria-label="quantity" type="number" value="1" min="1" class="w-12 text-center border rounded-md py-1"/>
-            <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
-            <select class="ml-auto border rounded-md px-2 py-1 text-sm" aria-label="Select design">
-              <option>Floral Pattern</option><option>Geometric</option><option>Heart Motif</option>
-            </select>
-          </div>
-          <div class="mt-4 flex items-center justify-between">
-            <div class="text-lg font-semibold">₹650</div>
-            <button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring btn-tap">Personalize</button>
-          </div>
-        </div>
-      </article>
-
       <article class="paper rounded-2xl overflow-hidden hover:shadow-lg transition craft-card" data-category="candle" data-product="Scented Soy Candle" data-price="₹650">
         <div class="relative"><img loading="lazy" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1200&auto=format&fit=crop" alt="Scented Soy Candle" class="w-full h-48 sm:h-52 object-cover"/><span class="badge absolute left-3 top-3">Candle</span></div>
         <div class="p-4">
@@ -408,26 +508,6 @@ html{scroll-behavior:smooth}
           </div>
           <div class="mt-4 flex items-center justify-between">
             <div class="text-lg font-semibold">₹650</div>
-            <button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring btn-tap">WhatsApp</button>
-          </div>
-        </div>
-      </article>
-
-      <article class="paper rounded-2xl overflow-hidden hover:shadow-lg transition craft-card" data-category="crochet" data-product="Crochet Muffler" data-price="₹1,100">
-        <div class="relative"><img loading="lazy" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1200&auto=format&fit=crop" alt="Crochet Muffler" class="w-full h-48 sm:h-52 object-cover"/><span class="badge absolute left-3 top-3">Crochet</span></div>
-        <div class="p-4">
-          <h4 class="font-medium">Crochet Muffler</h4>
-          <p class="text-sm muted mt-1">Warm, soft & stylish</p>
-          <div class="flex items-center gap-2 mt-3">
-            <button class="qty-btn btn-tap" data-qty-dec aria-label="decrease quantity">−</button>
-            <input aria-label="quantity" type="number" value="1" min="1" class="w-12 text-center border rounded-md py-1"/>
-            <button class="qty-btn btn-tap" data-qty-inc aria-label="increase quantity">+</button>
-            <select class="ml-auto border rounded-md px-2 py-1 text-sm" aria-label="Select color">
-              <option>Cream</option><option>Rose Pink</option><option>Sky Blue</option>
-            </select>
-          </div>
-          <div class="mt-4 flex items-center justify-between">
-            <div class="text-lg font-semibold">₹1,100</div>
             <button class="wa-btn px-3 py-2 rounded-md text-sm focus-ring btn-tap">WhatsApp</button>
           </div>
         </div>
@@ -496,7 +576,7 @@ html{scroll-behavior:smooth}
   </section>
 
   <!-- About -->
-  <section id="about" class="mt-12 grid lg:grid-cols-2 gap-8 items-center">
+  <section id="about" class="mt-12 grid lg:grid-cols-2 gap-8 items-center mb-16">
     <div class="paper rounded-2xl p-6">
       <h3 class="text-2xl font-semibold">About Afreen's Studio</h3>
       <p class="mt-3 muted">A small studio specializing in handmade crochet items, pottery, and crafts. We offer crochet flowers, custom frames, slam books, mufflers, and more. Monthly workshops cover crochet basics, pottery, weaving, and candle making.</p>
@@ -513,7 +593,7 @@ html{scroll-behavior:smooth}
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="mt-12 paper rounded-2xl p-6">
+  <section id="contact" class="mt-12 paper rounded-2xl p-6 mb-16">
     <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
       <div>
         <h4 class="text-xl font-semibold">Get in Touch</h4>
@@ -538,6 +618,8 @@ html{scroll-behavior:smooth}
           <select class="w-full border rounded-lg px-3 py-2" required>
             <option value="">Select interest...</option>
             <option>Crochet Items</option>
+            <option>Custom Frames</option>
+            <option>Slam Books</option>
             <option>Pottery</option>
             <option>Candles</option>
             <option>Workshops</option>
@@ -589,9 +671,8 @@ window.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.from('header', { y: -40, opacity: 0, duration: .6, ease: 'power2.out' });
     gsap.from('.accent-underline, .muted', { opacity: 0, y: 16, duration: .7, stagger: .06, ease: 'power2.out' });
-    gsap.from('#crochet', { scrollTrigger: { trigger: '#crochet', start: 'top 85%' }, y: 30, opacity: 0, duration: .7, ease: 'power2.out' });
-    gsap.utils.toArray('.paper').forEach((el,i) => {
-      gsap.from(el, { scrollTrigger: { trigger: el, start: 'top 88%' }, y: 22, opacity: 0, duration: .55, ease: 'power2.out', delay: (i%6)*.04 });
+    gsap.utils.toArray('section').forEach((el,i) => {
+      gsap.from(el, { scrollTrigger: { trigger: el, start: 'top 85%' }, y: 22, opacity: 0, duration: .6, ease: 'power2.out', delay: (i%6)*.04 });
     });
   }
 
@@ -642,22 +723,26 @@ window.addEventListener('DOMContentLoaded', () => {
   mobileNav?.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
   mobileNav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setTimeout(closeMenu, 50)));
 
-  // Filters + Search + Sort
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const searchBox = document.getElementById('searchBox');
-  const sortSelect = document.getElementById('sortSelect');
-  const grid = document.getElementById('productGrid');
-  const cards = [...grid.querySelectorAll('.craft-card')];
+  // Collect all product cards from all sections
+  const allSectionsCards = [
+    ...document.querySelectorAll('#crochet .craft-card'),
+    ...document.querySelectorAll('#frames .craft-card'),
+    ...document.querySelectorAll('#slambooks .craft-card'),
+    ...document.querySelectorAll('#shop .craft-card')
+  ];
 
-  // Add crochet section cards to main grid filtering
-  const crochetCards = document.querySelectorAll('#crochet article');
-  crochetCards.forEach(card => {
+  // Add them to the main grid
+  const grid = document.getElementById('productGrid');
+  allSectionsCards.forEach(card => {
     const clone = card.cloneNode(true);
     clone.classList.add('craft-card');
     grid.appendChild(clone);
   });
 
-  // Re-select all cards including new ones
+  // Filters + Search + Sort
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const searchBox = document.getElementById('searchBox');
+  const sortSelect = document.getElementById('sortSelect');
   const allCards = [...grid.querySelectorAll('.craft-card')];
 
   // Normalize numeric price for sorting
@@ -683,7 +768,9 @@ window.addEventListener('DOMContentLoaded', () => {
     allCards.forEach(c => {
       const cat = c.dataset.category;
       const name = (c.dataset.product || '').toLowerCase();
-      const ok = (activeFilter === 'all' || cat === activeFilter) && (!q || name.includes(q));
+      const desc = c.querySelector('.muted')?.textContent.toLowerCase() || '';
+      const ok = (activeFilter === 'all' || cat === activeFilter) && 
+                (!q || name.includes(q) || desc.includes(q));
       c.style.display = ok ? '' : 'none';
     });
   }
@@ -736,8 +823,16 @@ window.addEventListener('DOMContentLoaded', () => {
     const variant = card.querySelector('select');
     const btn = card.querySelector('.wa-btn');
 
-    dec?.addEventListener('click', () => { qty.value = Math.max(1, parseInt(qty.value||'1',10) - 1); qty.dispatchEvent(new Event('change')); });
-    inc?.addEventListener('click', () => { qty.value = Math.max(1, parseInt(qty.value||'1',10) + 1); qty.dispatchEvent(new Event('change')); });
+    dec?.addEventListener('click', () => { 
+      qty.value = Math.max(1, parseInt(qty.value||'1',10) - 1); 
+      qty.dispatchEvent(new Event('change')); 
+    });
+    
+    inc?.addEventListener('click', () => { 
+      qty.value = Math.max(1, parseInt(qty.value||'1',10) + 1); 
+      qty.dispatchEvent(new Event('change')); 
+    });
+    
     qty?.addEventListener('change', () => {
       const n = Math.max(1, parseInt(qty.value||'1',10));
       qty.value = String(n);
@@ -756,7 +851,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
   
   // Initialize all cards
-  document.querySelectorAll('.craft-card, #crochet article').forEach(initCard);
+  allCards.forEach(initCard);
 
   // Floating WA
   document.getElementById('waFab').addEventListener('click', e => {
@@ -764,10 +859,18 @@ window.addEventListener('DOMContentLoaded', () => {
     window.open(waLink("Hi Afreen! I'd like to know more about your handmade crochet products and workshops."), '_blank');
   });
 
-  // Smooth scroll for crochet section link
-  document.querySelector('a[href="#crochet"]')?.addEventListener('click', (e) => {
-    e.preventDefault();
-    document.getElementById('crochet').scrollIntoView({ behavior: 'smooth' });
+  // Smooth scroll for navigation links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href === '#') return;
+      
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
   });
 });
 </script>
